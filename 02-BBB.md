@@ -1,4 +1,6 @@
-== 68
+# Medium Questions
+
+## 68
 
 On our special chessboard, two bishops attack each other if they share the same diagonal. This includes bishops that have another bishop located between them, i.e. bishops can attack through pieces.
 You are given N bishops, represented as (row, column) tuples on a M by M chessboard. Write a function to count the number of pairs of bishops that attack each other. The ordering of the pair doesn't matter: (1, 2) is considered the same as (2, 1).
@@ -15,7 +17,7 @@ The board would look like this:
 [b 0 0 0 0]
 You should return 2, since bishops 1 and 3 attack each other, as well as bishops 3 and 4.
 
-== 62
+## 62
 
 There is an N by M matrix of zeroes. Given N and M, write a function to count the number of ways of starting at the top-left corner and getting to the bottom-right corner. You can only move right or down.
 For example, given a 2 by 2 matrix, you should return 2, since there are two ways to get to the bottom-right:
@@ -23,20 +25,20 @@ Right, then down
 Down, then right
 Given a 5 by 5 matrix, there are 70 ways to get to the bottom-right.
 
-== 61
+## 61
 
 Implement integer exponentiation. That is, implement the pow(x, y) function, where x and y are integers and returns x^y.
 Do this faster than the naive method of repeated multiplication.
 For example, pow(2, 10) should return 1024.
 
-== 49
+## 49
 
 Given an array of numbers, find the maximum sum of any contiguous subarray of the array.
 For example, given the array [34, -50, 42, 14, -5, 86], the maximum sum would be 137, since we would take elements 42, 14, -5, and 86.
 Given the array [-5, -1, -8, -9], the maximum sum would be 0, since we would not take any elements.
 Do this in O(N) time.
 
-== 48
+## 48
 
 Given pre-order and in-order traversals of a binary tree, write a function to reconstruct the tree.
 For example, given the following preorder traversal:
@@ -50,7 +52,7 @@ You should return the following tree:
  / \ / \
 d  e f  g
 
-== 74
+## 74
 
 This problem was asked by Apple.
 Suppose you have a multiplication table that is N by N. That is, a 2D array where the value at the i-th row and j-th column is (i + 1) * (j + 1) (if 0-indexed) or i * j (if 1-indexed).
@@ -64,11 +66,11 @@ For example, given N = 6 and X = 12, you should return 4, since the multiplicati
 | 6 | 12 | 18 | 24 | 30 | 36 |
 And there are 4 12's in the table.
 
-== 45
+## 45
 
 Using a function rand5() that returns an integer from 1 to 5 (inclusive) with uniform probability, implement a function rand7() that returns an integer from 1 to 7 (inclusive).
 
-== 76 
+## 76 
 
 You are given an N by M 2D matrix of lowercase letters. Determine the minimum number of columns that can be removed to ensure that each row is ordered from top to bottom lexicographically. That is, the letter at each column is lexicographically later as you go down each row. It does not matter whether each row itself is ordered lexicographically.
 For example, given the following table:
@@ -89,17 +91,18 @@ wvu
 tsr
 Your function should return 3, since we would need to remove all the columns to order it.
 
-== 78 
+## 78 
 
 Given k sorted singly linked lists, write a function to merge all the lists into one sorted singly linked list.
 
-== 79 
+## 79 
 
 Given an array of integers, write a function to determine whether the array could become non-decreasing by modifying at most 1 element.
 For example, given the array [10, 5, 7], you should return true, since we can modify the 10 into a 1 to make the array non-decreasing.
 Given the array [10, 5, 1], you should return false, since we can't modify any one element to get a non-decreasing array.
 
-== 83
+## 83
+
 Good morning! Here's your coding interview problem for today.
 This problem was asked by Google.
 Invert a binary tree.
@@ -116,7 +119,7 @@ should become:
  \  / \
   f e  d
 
-== 84
+## 84
 
 Given a matrix of 1s and 0s, return the number of "islands" in the matrix. A 1 represents land and 0 represents water, so an island is a group of 1s that are neighboring whose perimeter is surrounded by water.
 For example, this matrix has 4 islands.
@@ -127,12 +130,12 @@ For example, this matrix has 4 islands.
 1 1 0 0 1
 1 1 0 0 1
 
-== 85
+## 85
 
 This problem was asked by Facebook.
 Given three 32-bit integers x, y, and b, return x if b is 1 and y if b is 0, using only mathematical or bit operations. You can assume b can only be 1 or 0.
 
-== 86
+## 86
 
 This problem was asked by Google.
 Given a string of parentheses, write a function to compute the minimum number of parentheses to be removed to make the string valid (i.e. each open parenthesis is eventually closed).
