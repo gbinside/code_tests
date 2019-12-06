@@ -970,3 +970,12 @@ Find a path with the fewest number of jumps required to get from 0 to N.
 This problem was asked by Dropbox.
 Create an algorithm to efficiently compute the approximate median of a list of numbers.
 More precisely, given an unordered list of N numbers, find an element whose rank is between N / 4 and 3 * N / 4, with a high level of certainty, in less than O(N) time.
+
+## 328
+
+Good morning! Here's your coding interview problem for today.
+This problem was asked by Facebook.
+In chess, the Elo rating system is used to calculate player strengths based on game results.
+A simplified description of the Elo system is as follows. Every player begins at the same score. For each subsequent game, the loser transfers some points to the winner, where the amount of points transferred depends on how unlikely the win is. For example, a 1200-ranked player should gain much more points for beating a 2000-ranked player than for beating a 1300-ranked player.
+Implement this system.
+
