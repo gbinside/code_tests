@@ -430,3 +430,42 @@ For example, given the sequence [3, 2, 6, 1, 9], the resulting Cartesian tree wo
 ``` 
 Given a sequence S, construct the corresponding Cartesian tree.
 
+## 330
+
+This problem was asked by Dropbox.
+
+A Boolean formula can be said to be satisfiable if there is a way to assign truth values to each variable such that the entire formula evaluates to true.
+
+For example, suppose we have the following formula, where the symbol ¬ is used to denote negation:
+
+(¬c OR b) AND (b OR c) AND (¬b OR c) AND (¬c OR ¬a)
+
+One way to satisfy this formula would be to let a = False, b = True, and c = True.
+
+This type of formula, with AND statements joining tuples containing exactly one OR, is known as 2-CNF.
+
+Given a 2-CNF formula, find a way to assign truth values to satisfy it, or return False if this is impossible.
+
+## 329
+
+This problem was asked by Amazon.
+
+The stable marriage problem is defined as follows:
+
+Suppose you have N men and N women, and each person has ranked their prospective opposite-sex partners in order of preference.
+
+For example, if N = 3, the input could be something like this:
+
+guy_preferences = {
+    'andrew': ['caroline', 'abigail', 'betty'],
+    'bill': ['caroline', 'betty', 'abigail'],
+    'chester': ['betty', 'caroline', 'abigail'],
+}
+
+gal_preferences = {
+    'abigail': ['andrew', 'bill', 'chester'],
+    'betty': ['bill', 'andrew', 'chester'],
+    'caroline': ['bill', 'chester', 'andrew']
+}
+
+Write an algorithm that pairs the men and women together in such a way that no two people of opposite sex would both rather be with each other than with their current partners.
