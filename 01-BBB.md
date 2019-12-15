@@ -1083,6 +1083,39 @@ Given integers M and N, write a program that counts how many positive integer pa
 a + b = M
 a XOR b = N
 
+```cpp
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+vector<pair<int,int>> solve(int m, int n) {
+    vector<pair<int,int>> ret;
+    for (int i=0; i<m/2; i++) {
+        if (((m-i) ^ i) == n) {
+            ret.push_back(make_pair(i,m-i));
+        }
+    }
+    return ret;
+}
+
+int main()
+{
+    cout << "solve(705, 573)" << endl;
+   
+    auto res = solve(705, 573);
+    cout << res.size() << " solutions" << endl;
+    
+    for (auto x = res.begin(); x != res.end();) {
+        cout << x->first << "," << x->second;
+        x++;
+        if (res.end() != x) { cout << " - "; }
+    }
+    cout << endl;
+    return 0;
+}
+```
+
 ## 334
 
 This problem was asked by Twitter.
