@@ -1093,3 +1093,97 @@ For example, given the input [5, 2, 7, 8], you should return True, since (5 * 2 
 
 Write a function that plays the 24 game.
 
+```cpp
+
+#include <iostream>
+#include <vector>
+#include <sstream>
+
+using namespace std;
+
+pair<int, string> compute(int a, int b, int c, int d, int seq) {
+    stringstream ss;
+    int op[] = {
+        (seq>>5) & 15,
+        (seq>>2) & 7,
+        (seq) & 3,
+    };
+    
+    for (auto o: op) {
+        switch(o) {
+            case 0: a=a+b; b=c; c=d;
+                ss << "a+b ";
+                break;
+            case 1: a=a-b; b=c; c=d;
+                ss << "a-b ";
+                break;
+            case 2: a=a*b; b=c; c=d;
+                ss << "a*b ";
+                break;
+            case 3: if (b==0) {throw "divison by 0";}; a=a/b; b=c; c=d;
+                ss << "a/b ";
+                break;
+            case 4: b=b+c; c=d;
+                ss << "b+c ";
+                break;
+            case 5: b=b-c; c=d;
+                ss << "b-c ";
+                break;
+            case 6: b=b*c; c=d;
+                ss << "b*c ";
+                break;
+            case 7: if (c==0) {throw "divison by 0";}; b=b/c; c=d;
+                ss << "b/c ";
+                break;
+            case 8: c=c+d;
+                ss << "c+d ";
+                break;
+            case 9: c=c-d;
+                ss << "c-d ";
+                break;
+            case 10: c=c*d;
+                ss << "c*d ";
+                break;
+            case 11: if (d==0) {throw "divison by 0";}; c=c/d;
+                ss << "c/d ";
+                break;
+            default:
+                break;
+        }
+        
+    }
+    ss << seq << " end";
+    string sss = ss.str();
+    return make_pair(a, sss);
+}
+
+vector<string> solve(int a, int b, int c, int d) {
+    vector<string> ret;
+    int seq = 0;
+    pair<int, string> res;
+    while (seq <= 0x1ff) {
+        try{
+            res = compute(a,b,c,d,seq);
+        } catch (const char* msg) {
+        //    cerr << msg << endl;
+            seq++;
+            continue;
+        }
+        if (res.first == 24) {
+            ret.push_back(res.second);
+        }
+        seq++;
+    }
+    return ret;
+}
+
+int main()
+{
+    cout<<"Hello World"<< endl;
+
+    for (auto x: solve(5,2,7,8)) {
+        cout << x << endl;
+    }
+    return 0;
+}
+```
