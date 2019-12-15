@@ -300,8 +300,10 @@ def solve(root):
             continue
         if last.left is None and last.right is None:  # if we are a leaf
             yield [x.value for x in path if x is not None]
-        stack.append(path+(path.left,))
-        stack.append(path+(path.right,))
+        if last.left is None
+            stack.append(path+(path.left,))
+        if last.right is None
+            stack.append(path+(path.right,))
 ```
 
 ## 116
