@@ -1179,7 +1179,7 @@ vector<string> solve(int a, int b, int c, int d) {
 
 int main()
 {
-    cout<<"Hello World"<< endl;
+    cout << "solve(5,2,7,8)" << endl;
 
     for (auto x: solve(5,2,7,8)) {
         cout << x << endl;
