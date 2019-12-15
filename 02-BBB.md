@@ -276,14 +276,33 @@ For example, if the list is [1, 2, 3, 4, 5] and K is 9, then it should return [2
 
 ## 110
 This problem was asked by Facebook.
+
 Given a binary tree, return all paths from the root to leaves.
+
 For example, given the tree:
+
+```
    1
   / \
  2   3
     / \
    4   5
+```
 Return [[1, 2], [1, 3, 4], [1, 3, 5]].
+
+```
+def solve(root):
+    stack = [(root,)]
+    while stack:
+        path = stack.pop(0)
+        last = path[-1]
+        if last is None:
+            continue
+        if last.left is None and last.right is None:  # if we are a leaf
+            yield [x.value for x in path if x is not None]
+        stack.append(path+(path.left,))
+        stack.append(path+(path.right,))
+```
 
 ## 116
 
