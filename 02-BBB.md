@@ -105,6 +105,8 @@ def idx_of_smallest(l):
     idx = None
     _min = None
     for i,x in enumerate(l):
+        if x in None:
+            continue
         if _min is None or x.value < _min:
             idx = i
             _min = x.value
