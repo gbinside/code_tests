@@ -1073,3 +1073,23 @@ This problem was asked by Salesforce.
 Write a program to merge two binary trees. Each node in the new tree should hold a value equal to the sum of the values of the corresponding nodes of the input trees.
 
 If only one input tree has a node in a given position, the corresponding node in the new tree should match that input node.
+
+## 332
+
+This problem was asked by Jane Street.
+
+Given integers M and N, write a program that counts how many positive integer pairs (a, b) satisfy the following conditions:
+
+a + b = M
+a XOR b = N
+
+## 334
+
+This problem was asked by Twitter.
+
+The 24 game is played as follows. You are given a list of four integers, each between 1 and 9, in a fixed order. By placing the operators +, -, *, and / between the numbers, and grouping them with parentheses, determine whether it is possible to reach the value 24.
+
+For example, given the input [5, 2, 7, 8], you should return True, since (5 * 2 - 7) * 8 = 24.
+
+Write a function that plays the 24 game.
+
