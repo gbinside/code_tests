@@ -95,6 +95,41 @@ Your function should return 3, since we would need to remove all the columns to 
 
 Given k sorted singly linked lists, write a function to merge all the lists into one sorted singly linked list.
 
+```python
+
+# class Node():
+#     value
+#     next
+
+def idx_of_smallest(l):
+    idx = None
+    _min = None
+    for i,x in enumerate(l):
+        if _min is None or x.value < _min:
+            idx = i
+            _min = x.value
+    return idx
+
+
+def merge(list_of_linked_lists):
+    loll = list(list_of_linked_lists)
+    output = None
+    current_output = None
+    while any(loll):
+        i = idx_of_smallest(loll)
+        if i is None:
+            break
+        if output is None:
+            output = copy(loll[i])
+            current_output = output
+        else:
+            current_output.next = copy(loll[i])
+            current_output = current_output.next
+        current_output.next = None
+        loll[i] = loll[i].next            
+    return output
+```
+
 ## 79 
 
 Given an array of integers, write a function to determine whether the array could become non-decreasing by modifying at most 1 element.
