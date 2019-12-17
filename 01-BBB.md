@@ -1232,7 +1232,7 @@ Given a set of points (x, y) on a 2D cartesian plane, find the two closest point
 
 For example, given the points [(1, 1), (-1, -1), (3, 4), (6, 1), (-1, -6), (-4, -3)], return [(-1, -1), (1, 1)].
 
-```
+```python
 def dist(a,b):
     x1, y1 = a
     x2, y2 = b
