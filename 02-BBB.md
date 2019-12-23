@@ -1085,3 +1085,61 @@ This problem was asked by Facebook.
 
 Given an integer n, find the next biggest integer with the same number of 1-bits on. For example, given the number 6 (`0110` in binary), return 9 (`1001`).
 
+## 342
+
+This problem was asked by Stripe.
+
+reduce (also known as fold) is a function that takes in an array, a combining function, and an initial value and builds up a result by calling the combining function on each element of the array, left to right. For example, we can write sum() in terms of reduce:
+
+def add(a, b):
+    return a + b
+
+def sum(lst):
+    return reduce(lst, add, 0)
+
+This should call add on the initial value with the first element of the array, and then the result of that with the second element of the array, and so on until we reach the end, when we return the sum of the array.
+
+Implement your own version of reduce.
+
+```python
+
+def reduce(lst, fx, ret):
+    for x in lst:
+        ret = fx(ret, x)
+    return ret
+
+```
+
+
+## 343
+
+This problem was asked by Google.
+
+Given a binary search tree and a range [a, b] (inclusive), return the sum of the elements of the binary search tree within the range.
+
+For example, given the following tree:
+
+``` 
+    5
+   / \
+  3   8
+ / \ / \
+2  4 6  10
+```
+
+and the range [4, 9], return 23 (5 + 4 + 6 + 8).
+
+## 345
+
+This problem was asked by Google.
+
+You are given a set of synonyms, such as (big, large) and (eat, consume). Using this set, determine if two sentences with the same number of words are equivalent.
+
+For example, the following two sentences are equivalent:
+
+"He wants to eat food."
+"He wants to consume food."
+Note that the synonyms (a, b) and (a, c) do not necessarily imply (b, c): consider the case of (coach, bus) and (coach, teacher).
+
+Follow-up: what if we can assume that (a, b) and (a, c) do in fact imply (b, c)?
+
