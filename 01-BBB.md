@@ -1274,3 +1274,54 @@ and matrix:
 Your function should return 3, since we can make the words 'eat', 'in', and 'rat' without them touching each other. 
 
 We could have alternatively made 'eat' and 'rain', but that would be incorrect since that's only 2 words.
+
+## 347
+
+You are given a string of length N and a parameter k. The string can be manipulated by taking one of the first k letters and moving it to the end.
+
+Write a program to determine the lexicographically smallest string that can be created after an unlimited number of moves.
+
+For example, suppose we are given the string daily and k = 1. The best we can create in this case is ailyd.
+
+## 348
+
+This problem was asked by Zillow.
+
+A ternary search tree is a trie-like data structure where each node may have up to three children. Here is an example which represents the words code, cob, be, ax, war, and we.
+
+```
+       c
+    /  |  \
+   b   o   w
+ / |   |   |
+a  e   d   a
+|    / |   | \ 
+x   b  e   r  e  
+```
+
+The tree is structured according to the following rules:
+
+* left child nodes link to words lexicographically earlier than the parent prefix
+* right child nodes link to words lexicographically later than the parent prefix
+* middle child nodes continue the current word
+
+For instance, since code is the first word inserted in the tree, and cob lexicographically precedes cod, cob is represented as a left child extending from cod.
+
+Implement insertion and search functions for a ternary search tree.
+
+## 352
+
+This problem was asked by Palantir.
+
+A typical American-style crossword puzzle grid is an N x N matrix with black and white squares, which obeys the following rules:
+
+Every white square must be part of an "across" word and a "down" word.
+
+No word can be fewer than three letters long.
+
+Every white square must be reachable from every other white square.
+
+The grid is rotationally symmetric (for example, the colors of the top left and bottom right squares must match).
+
+Write a program to determine whether a given matrix qualifies as a crossword grid.
+
