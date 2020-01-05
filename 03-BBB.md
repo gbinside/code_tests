@@ -511,3 +511,110 @@ For example, suppose your input was the following tree:
 In this case, removing the edge (3, 4) satisfies our requirement.
 
 Write a function that returns the maximum number of edges you can remove while still satisfying this requirement.
+
+## 349
+
+This problem was asked by Grammarly.
+
+Soundex is an algorithm used to categorize phonetically, such that two names that sound alike but are spelled differently have the same representation.
+
+Soundex maps every name to a string consisting of one letter and three numbers, like M460.
+
+One version of the algorithm is as follows:
+
+* Remove consecutive consonants with the same sound (for example, change ck -> c).
+* Keep the first letter. The remaining steps only apply to the rest of the string.
+* Remove all vowels, including y, w, and h.
+* Replace all consonants with the following digits:
+ * b, f, p, v → 1
+ * c, g, j, k, q, s, x, z → 2
+ * d, t → 3
+ * l → 4
+ * m, n → 5
+ * r → 6
+
+If you don't have three numbers yet, append zeros until you do. Keep the first three numbers.
+
+Using this scheme, Jackson and Jaxen both map to J250.
+
+Implement Soundex.
+
+## 351
+
+This problem was asked by Quora.
+
+Word sense disambiguation is the problem of determining which sense a word takes on in a particular setting, if that word has multiple meanings. For example, in the sentence "I went to get money from the bank", bank probably means the place where people deposit money, not the land beside a river or lake.
+
+Suppose you are given a list of meanings for several words, formatted like so:
+
+```
+{
+    "word_1": ["meaning one", "meaning two", ...],
+    ...
+    "word_n": ["meaning one", "meaning two", ...]
+}
+```
+
+Given a sentence, most of whose words are contained in the meaning list above, create an algorithm that determines the likely sense of each possibly ambiguous word.
+
+## 354
+
+This problem was asked by Google.
+
+Design a system to crawl and copy all of Wikipedia using a distributed network of machines.
+
+More specifically, suppose your server has access to a set of client machines. Your client machines can execute code you have written to access Wikipedia pages, download and parse their data, and write the results to a database.
+
+Some questions you may want to consider as part of your solution are:
+
+* How will you reach as many pages as possible?
+* How can you keep track of pages that have already been visited?
+* How will you deal with your client machines being blacklisted?
+* How can you update your database when Wikipedia pages are added or updated?
+
+## 355
+
+This problem was asked by Airbnb.
+
+You are given an array X of floating-point numbers x1, x2, ... xn. These can be rounded up or down to create a corresponding array Y of integers y1, y2, ... yn.
+
+Write an algorithm that finds an appropriate Y array with the following properties:
+
+* The rounded sums of both arrays should be equal.
+* The absolute pairwise difference between elements is minimized. In other words, |x1- y1| + |x2- y2| + ... + |xn- yn| should be as small as possible.
+For example, suppose your input is [1.3, 2.3, 4.4]. In this case you cannot do better than [1, 2, 5], which has an absolute difference of |1.3 - 1| + |2.3 - 2| + |4.4 - 5| = 1.
+
+## 356
+
+This problem was asked by Netflix.
+
+Implement a queue using a set of fixed-length arrays.
+
+The queue should support enqueue, dequeue, and get_size operations.
+
+## 357
+
+This problem was asked by LinkedIn.
+
+You are given a binary tree in a peculiar string representation. Each node is written in the form (lr), where l corresponds to the left child and r corresponds to the right child.
+
+If either l or r is null, it will be represented as a zero. Otherwise, it will be represented by a new (lr) pair.
+
+Here are a few examples:
+
+* A root node with no children: (00)
+* A root node with two children: ((00)(00))
+* An unbalanced tree with three consecutive left children: ((((00)0)0)0)
+
+Given this representation, determine the depth of the tree.
+
+## 358
+
+This problem was asked by Dropbox.
+
+Create a data structure that performs all the following operations in O(1) time:
+
+* plus: Add a key with value 1. If the key already exists, increment its value by one.
+* minus: Decrement the value of a key. If the key's value is currently 1, remove it.
+* get_max: Return a key with the highest value.
+* get_min: Return a key with the lowest value.
