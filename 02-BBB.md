@@ -1143,4 +1143,54 @@ Note that the synonyms (a, b) and (a, c) do not necessarily imply (b, c): consid
 
 Follow-up: what if we can assume that (a, b) and (a, c) do in fact imply (b, c)?
 
-    
+## 346
+
+This problem was asked by Airbnb.
+
+You are given a huge list of airline ticket prices between different cities around the world on a given day. These are all direct flights. Each element in the list has the format (source_city, destination, price).
+
+Consider a user who is willing to take up to k connections from their origin city A to their destination B. Find the cheapest fare possible for this journey and print the itinerary for that journey.
+
+For example, our traveler wants to go from JFK to LAX with up to 3 connections, and our input flights are as follows:
+
+```
+[
+    ('JFK', 'ATL', 150),
+    ('ATL', 'SFO', 400),
+    ('ORD', 'LAX', 200),
+    ('LAX', 'DFW', 80),
+    ('JFK', 'HKG', 800),
+    ('ATL', 'ORD', 90),
+    ('JFK', 'LAX', 500),
+]
+```
+
+Due to some improbably low flight prices, the cheapest itinerary would be JFK -> ATL -> ORD -> LAX, costing $440.
+
+## 350
+
+This problem was asked by Uber.
+
+Write a program that determines the smallest number of perfect squares that sum up to N.
+
+Here are a few examples:
+
+Given N = 4, return 1 (4)
+Given N = 17, return 2 (16 + 1)
+Given N = 18, return 2 (9 + 9)
+
+## 353
+
+This problem was asked by Square.
+
+You are given a histogram consisting of rectangles of different heights. These heights are represented in an input list, such that [1, 3, 2, 5] corresponds to the following diagram:
+
+```
+      x
+      x  
+  x   x
+  x x x
+x x x x
+```
+
+Determine the area of the largest rectangle that can be formed only from the bars of the histogram. For the diagram above, for example, this would be six, representing the 2 x 3 area at the bottom right.
