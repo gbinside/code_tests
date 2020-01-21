@@ -1335,6 +1335,16 @@ For example, the input could be 'niesevehrtfeev', which is an anagram of 'threef
 
 Given this string, return the original integers in sorted order. In the example above, this would be 357
 
+
+## 362
+
+This problem was asked by Twitter.
+
+A strobogrammatic number is a positive number that appears the same after being rotated 180 degrees. For example, 16891 is strobogrammatic.
+
+Create a program that finds all strobogrammatic numbers with N digits.
+
+
 ## 370 
 
 This problem was asked by Postmates.
