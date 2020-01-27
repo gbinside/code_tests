@@ -1374,3 +1374,52 @@ Write a function that takes a natural number as input and returns the number of 
 
 Constraint: don't use any loops.
 
+## 376
+
+This problem was asked by Google.
+
+You are writing an AI for a 2D map game. You are somewhere in a 2D grid, and there are coins strewn about over the map.
+
+Given the position of all the coins and your current position, find the closest coin to you in terms of Manhattan distance. That is, you can move around up, down, left, and right, but not diagonally. If there are multiple possible closest coins, return any of them.
+
+For example, given the following map, where you are x, coins are o, and empty spaces are . (top left is 0, 0):
+
+```
+---------------------
+| . | . | x | . | o |
+---------------------
+| o | . | . | . | . |
+---------------------
+| o | . | . | . | o |
+---------------------
+| . | . | o | . | . |
+---------------------
+```
+
+return (0, 4), since that coin is closest. This map would be represented in our question as:
+
+```
+Our position: (0, 2)
+Coins: [(0, 4), (1, 0), (2, 0), (3, 2)]
+```
+
+## 379
+
+This problem was asked by Microsoft.
+
+Given a string, generate all possible subsequences of the string.
+
+For example, given the string xyz, return an array or set with the following strings:
+
+
+```
+x
+y
+z
+xy
+xz
+yz
+xyz
+```
+Note that zx is not a valid subsequence since it is not in the order of the given string.
+
