@@ -1295,3 +1295,48 @@ This problem was asked by Two Sigma.
 You’re tracking stock price at a given instance of time. Implement an API with the following functions: add(), update(), remove(), which adds/updates/removes a datapoint for the stock price you are tracking. The data is given as (timestamp, price), where timestamp is specified in unix epoch time.
 
 Also, provide max(), min(), and average() functions that give the max/min/average of all values seen thus far.
+
+
+## 375
+
+This problem was asked by Google.
+
+The h-index is a metric used to measure the impact and productivity of a scientist or researcher.
+
+A scientist has index h if h of their N papers have at least h citations each, and the other N - h papers have no more than h citations each. If there are multiple possible values for h, the maximum value is used.
+
+Given an array of natural numbers, with each value representing the number of citations of a researcher's paper, return the h-index of that researcher.
+
+For example, if the array was:
+
+```
+[4, 0, 0, 2, 3]
+```
+
+This means the researcher has 5 papers with 4, 1, 0, 2, and 3 citations respectively. The h-index for this researcher is 2, since they have 2 papers with at least 2 citations and the remaining 3 papers have no more than 2 citations.
+
+## 378
+
+This problem was asked by Coinbase.
+
+Write a function that takes in a number, string, list, or dictionary and returns its JSON encoding. It should also handle nulls.
+
+For example, given the following input:
+```
+[None, 123, ["a", "b"], {"c":"d"}]
+```
+You should return the following, as a string:
+
+```
+'[null, 123, ["a", "b"], {"c": "d"}]'
+```
+
+## 380
+
+This problem was asked by Nextdoor.
+
+Implement integer division without using the division operator. Your function should return a tuple of (dividend, remainder) and it should take two numbers, the product and divisor.
+
+For example, calling divide(10, 3) should return (3, 1) since the divisor is 3 and the remainder is 1.
+
+Bonus: Can you do it in O(log n) time?
