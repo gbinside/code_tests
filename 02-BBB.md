@@ -1340,3 +1340,15 @@ Implement integer division without using the division operator. Your function sh
 For example, calling divide(10, 3) should return (3, 1) since the divisor is 3 and the remainder is 1.
 
 Bonus: Can you do it in O(log n) time?
+
+## 383
+
+This problem was asked by Gusto.
+
+Implement the function embolden(s, lst) which takes in a string s and list of substrings lst, and wraps all substrings in s with an HTML bold tag <b> and </b>.
+
+If two bold tags overlap or are contiguous, they should be merged.
+
+For example, given s = abcdefg and lst = ["bc", "ef"], return the string a<b>bc</b>d<b>ef</b>g.
+
+Given s = abcdefg and lst = ["bcd", "def"], return the string a<b>bcdef</b>g, since they overlap.
