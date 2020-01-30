@@ -618,3 +618,53 @@ Create a data structure that performs all the following operations in O(1) time:
 * minus: Decrement the value of a key. If the key's value is currently 1, remove it.
 * get_max: Return a key with the highest value.
 * get_min: Return a key with the lowest value.
+
+## 365
+
+This problem was asked by Google.
+
+A quack is a data structure combining properties of both stacks and queues. It can be viewed as a list of elements written left to right such that three operations are possible:
+
+* push(x): add a new item x to the left end of the list
+* pop(): remove and return the item on the left end of the list
+* pull(): remove the item on the right end of the list.
+
+Implement a quack using three stacks and O(1) additional memory, so that the amortized time for any push, pop, or pull operation is O(1).
+
+## 368
+
+This problem was asked by Google.
+
+Implement a key value store, where keys and values are integers, with the following methods:
+
+* update(key, vl): updates the value at key to val, or sets it if doesn't exist
+get(key): returns the value with key, or None if no such value exists
+* max_key(val): returns the largest key with value val, or None if no key with that value exists
+For example, if we ran the following calls:
+
+```
+kv.update(1, 1)
+kv.update(2, 1)
+```
+
+And then called kv.max_key(1), it should return 2, since it's the largest key with value 1.
+
+## 371
+
+This problem was asked by Google.
+
+You are given a series of arithmetic equations as a string, such as:
+```
+y = x + 1
+5 = x + 3
+10 = z + y + 2
+```
+The equations use addition only and are separated by newlines. Return a mapping of all variables to their values. If it's not possible, then return null. In this example, you should return:
+```
+{
+  x: 2,
+  y: 3,
+  z: 5
+}
+```
+
