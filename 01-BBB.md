@@ -17,6 +17,9 @@ def reverse(node, prev_node = None):
 This problem was asked by Two Sigma.
 Using a function rand7() that returns an integer from 1 to 7 (inclusive) with uniform probability, implement a function rand5() that returns an integer from 1 to 5 (inclusive).
 
+```python
+```
+
 ## 70
 
 This problem was asked by Microsoft.
@@ -47,6 +50,24 @@ Should return null, since we have an infinite loop.
 This problem was asked by Amazon.
 Given a string, find the longest palindromic contiguous substring. If there are more than one with the maximum length, return any one.
 For example, the longest palindromic substring of "aabcdcb" is "bcdcb". The longest palindromic substring of "bananas" is "anana".
+
+```python
+def fx(s):
+    start=0
+    l=2
+    ret=""
+    while start+l<=len(s):
+        rev = s[start+l-1:start-1:-1]
+        if start==0:
+            rev = s[l-1::-1] 
+        if s[start:start+l] == rev and l>len(ret):
+            ret = s[start:start+l]
+        l += 1
+        if start+l>len(s):
+            start+=1
+            l=2
+    return ret
+```
 
 ##  44
 
