@@ -1364,3 +1364,27 @@ For example, given an array of [1, 5, 10] and an amount 56, return 7 since we ca
 Given an array of [5, 8] and an amount 15, return 3 since we can use 5 5-cent coins.
 
 
+## 385
+
+This problem was asked by Apple.
+
+You are given a hexadecimal-encoded string that has been XOR'd against a single char.
+
+Decrypt the message. For example, given the string:
+
+```
+7a575e5e5d12455d405e561254405d5f1276535b5e4b12715d565b5c551262405d505e575f
+```
+
+You should be able to decrypt it and get:
+
+```
+Hello world from Daily Coding Problem
+```
+
+## 390
+
+This problem was asked by Two Sigma.
+
+You are given an unsorted list of 999,000 unique integers, each from 1 and 1,000,000. Find the missing 1000 numbers. What is the computational and space complexity of your solution?
+
