@@ -722,7 +722,7 @@ For example, given the following tree:
 2  -5
 Return 2 as it occurs twice: once as the left leaf, and once as the sum of 2 + 5 - 5.
 
-# 197
+## 197
 
 This problem was asked by Amazon.
 Given an array and a number k that's smaller than the length of the array, rotate the array to the right k elements in-place.
@@ -1519,3 +1519,33 @@ For example, given k = 18 and the following binary tree:
 2   6   19
 ```
 Return `True` since the path `8 -> 4 -> 6` sums to `18`.
+
+
+## 399
+
+This problem was asked by Facebook.
+
+Given a list of strictly positive integers, partition the list into 3 contiguous partitions which each sum up to the same value. If not possible, return null.
+
+For example, given the following list:
+
+`[3, 5, 8, 0, 8]`
+
+Return the following 3 partitions:
+
+```
+[[3, 5],
+ [8, 0],
+ [8]]
+```
+
+Which each add up to 8.
+
+## 401
+
+This problem was asked by Twitter.
+
+A permutation can be specified by an array `P`, where `P[i]` represents the location of the element at `i` in the permutation. For example, `[2, 1, 0]` represents the permutation where elements at the index `0` and `2` are swapped.
+
+Given an array and a permutation, apply the permutation to the array. For example, given the array `["a", "b", "c"]` and the permutation `[2, 1, 0]`, return `["c", "b", "a"]`.
+

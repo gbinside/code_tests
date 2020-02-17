@@ -749,3 +749,50 @@ Return 7, since the longest palindromic subsequence in the string is APTMTPA. Re
 
 Your algorithm should run in O(n^2) time and space.
 
+## 397
+
+This problem was asked by Microsoft.
+
+You are given a list of jobs to be done, where each job is represented by a start time and end time. Two jobs are compatible if they don't overlap. Find the largest subset of compatible jobs.
+
+For example, given the following jobs (there is no guarantee that jobs will be sorted):
+
+```
+[(0, 6),
+(1, 4),
+(3, 5),
+(3, 8),
+(4, 7),
+(5, 9),
+(6, 10),
+(8, 11)]
+```
+
+Return:
+
+```
+[(1, 4),
+(4, 7),
+(8, 11)]
+```
+## 398
+
+This problem was asked by Amazon.
+
+Given a linked list and an integer k, remove the k-th node from the end of the list and return the head of the list.
+
+k is guaranteed to be smaller than the length of the list.
+
+Do this in one pass.
+
+
+## 400
+
+This problem was asked by Goldman Sachs.
+
+Given a list of numbers L, implement a method sum(i, j) which returns the sum from the sublist L[i:j] (including i, excluding j).
+
+For example, given L = [1, 2, 3, 4, 5], sum(1, 3) should return sum([2, 3]), which is 5.
+
+You can assume that you can do some pre-processing. sum() should be optimized over the pre-processing step.
+
