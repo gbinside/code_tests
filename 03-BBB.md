@@ -796,3 +796,80 @@ For example, given L = [1, 2, 3, 4, 5], sum(1, 3) should return sum([2, 3]), whi
 
 You can assume that you can do some pre-processing. sum() should be optimized over the pre-processing step.
 
+## 405
+
+This problem was asked by Apple.
+
+Given a tree, find the largest tree/subtree that is a BST.
+
+Given a tree, return the size of the largest tree/subtree that is a BST.
+
+## 406
+
+This problem was asked by Quantcast.
+
+You are presented with an array representing a Boolean expression. The elements are of two kinds:
+
+* T and F, representing the values True and False.
+* &, |, and ^, representing the bitwise operators for AND, OR, and XOR.
+
+Determine the number of ways to group the array elements using parentheses so that the entire expression evaluates to True.
+
+For example, suppose the input is ['F', '|', 'T', '&', 'T']. In this case, there are two acceptable groupings: (F | T) & T and F | (T & T).
+
+## 409
+
+This problem was asked by Google.
+
+PageRank is an algorithm used by Google to rank the importance of different websites. While there have been changes over the years, the central idea is to assign each site a score based on the importance of other pages that link to that page.
+
+More mathematically, suppose there are N sites, and each site i has a certain count C<sub>i</sub> of outgoing links. Then the score for a particular site S<sub>j</sub> is defined as :
+
+`score(S<sub>j</sub>) = (1 - d) / N + d * (score(Sx) / Cx+ score(Sy) / Cy+ ... + score(Sz) / Cz))`
+
+Here, Sx, Sy, ..., Sz denote the scores of all the other sites that have outgoing links to Sj, and d is a damping factor, usually set to around `0.85`, used to model the probability that a user will stop searching.
+
+Given a directed graph of links between various websites, write a program that calculates each site's page rank.
+
+## 410
+
+This problem was asked by Airbnb.
+
+You are given an array X of floating-point numbers x1, x2, ... xn. These can be rounded up or down to create a corresponding array Y of integers y1, y2, ... yn.
+
+Write an algorithm that finds an appropriate Y array with the following properties:
+
+* The rounded sums of both arrays should be equal.
+* The absolute pairwise difference between elements is minimized. In other words, |x1- y1| + |x2- y2| + ... + |xn- yn| should be as small as possible.
+
+For example, suppose your input is [1.3, 2.3, 4.4]. In this case you cannot do better than [1, 2, 5], which has an absolute difference of |1.3 - 1| + |2.3 - 2| + |4.4 - 5| = 1.
+
+## 411
+
+This problem was asked by Google.
+
+Given a string which we can delete at most k, return whether you can make a palindrome.
+
+For example, given 'waterrfetawx' and a k of 2, you could delete f and x to get 'waterretaw'.
+
+## 413
+
+This problem was asked by Amazon.
+
+There exists a staircase with N steps, and you can climb up either 1 or 2 steps at a time. Given N, write a function that returns the number of unique ways you can climb the staircase. The order of the steps matters.
+
+For example, if N is 4, then there are 5 unique ways:
+
+* 1, 1, 1, 1
+* 2, 1, 1
+* 1, 2, 1
+* 1, 1, 2
+* 2, 2
+
+What if, instead of being able to climb 1 or 2 steps at a time, you could climb any number from a set of positive integers X? For example, if X = {1, 3, 5}, you could climb 1, 3, or 5 steps at a time.
+
+## 414
+
+This problem was asked by Microsoft.
+
+You have an N by N board. Write a function that, given N, returns the number of possible arrangements of the board where N queens can be placed on the board without threatening each other, i.e. no two queens share the same row, column, or diagonal.
