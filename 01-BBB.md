@@ -1549,6 +1549,16 @@ A permutation can be specified by an array `P`, where `P[i]` represents the loca
 
 Given an array and a permutation, apply the permutation to the array. For example, given the array `["a", "b", "c"]` and the permutation `[2, 1, 0]`, return `["c", "b", "a"]`.
 
+
+## 402 same as 362
+
+This problem was asked by Twitter.
+
+A strobogrammatic number is a positive number that appears the same after being rotated 180 degrees. For example, 16891 is strobogrammatic.
+
+Create a program that finds all strobogrammatic numbers with N digits.
+
+
 ## 403
 
 This problem was asked by Two Sigma.
@@ -1562,3 +1572,4 @@ This problem was asked by Snapchat.
 Given an array of time intervals (start, end) for classroom lectures (possibly overlapping), find the minimum number of rooms required.
 
 For example, given `[(30, 75), (0, 50), (60, 150)]`, you should return 2.
+
