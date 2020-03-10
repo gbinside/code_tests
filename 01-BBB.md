@@ -1573,3 +1573,107 @@ Given an array of time intervals (start, end) for classroom lectures (possibly o
 
 For example, given `[(30, 75), (0, 50), (60, 150)]`, you should return 2.
 
+## 416
+
+This problem was asked by Google.
+
+You are in an infinite 2D grid where you can move in any of the 8 directions:
+
+```
+ (x,y) to    
+    (x+1, y),
+    (x - 1, y),
+    (x, y+1),
+    (x, y-1),
+    (x-1, y-1),
+    (x+1,y+1),
+    (x-1,y+1),
+    (x+1,y-1)
+```
+You are given a sequence of points and the order in which you need to cover the points. Give the minimum number of steps in which you can achieve it. You start from the first point.
+
+Example:
+```
+Input: [(0, 0), (1, 1), (1, 2)]
+Output: 2
+```
+
+It takes 1 step to move from `(0, 0)` to `(1, 1)`. It takes one more step to move from `(1, 1)` to `(1, 2)`.
+
+## 417
+
+This problem was asked by Amazon.
+
+Given a linked list, remove all consecutive nodes that sum to zero. Print out the remaining nodes.
+
+For example, suppose you are given the input 3 -> 4 -> -7 -> 5 -> -6 -> 6. In this case, you should first remove 3 -> 4 -> -7, then -6 -> 6, leaving only 5.
+
+## 418
+
+This problem was asked by Atlassian.
+
+MegaCorp wants to give bonuses to its employees based on how many lines of codes they have written. They would like to give the smallest positive amount to each worker consistent with the constraint that if a developer has written more lines of code than their neighbor, they should receive more money.
+
+Given an array representing a line of seats of employees at MegaCorp, determine how much each one should get paid.
+
+For example, given [10, 40, 200, 1000, 60, 30], you should return [1, 2, 3, 4, 2, 1].
+
+## 419
+
+
+Good morning! Here's your coding interview problem for today.
+
+This problem was asked by PagerDuty.
+
+Given a positive integer N, find the smallest number of steps it will take to reach 1.
+
+There are two kinds of permitted steps:
+
+You may decrement N to N - 1.
+If a * b = N, you may decrement N to the larger of a and b.
+For example, given 100, you can reach 1 in five steps with the following route: 100 -> 10 -> 9 -> 3 -> 2 -> 1.
+
+## 420
+
+This problem was asked by Microsoft.
+
+A number is considered perfect if its digits sum up to exactly 10.
+
+Given a positive integer n, return the n-th perfect number.
+
+For example, given 1, you should return 19. Given 2, you should return 28.
+
+## 422
+
+This problem was asked by Salesforce.
+
+Write a program to merge two binary trees. Each node in the new tree should hold a value equal to the sum of the values of the corresponding nodes of the input trees.
+
+If only one input tree has a node in a given position, the corresponding node in the new tree should match that input node.
+
+## 423
+
+This problem was asked by Microsoft.
+
+The transitive closure of a graph is a measure of which vertices are reachable from other vertices. It can be represented as a matrix M, where M[i][j] == 1 if there is a path between vertices i and j, and otherwise 0.
+
+For example, suppose we are given the following graph in adjacency list form:
+
+```
+graph = [
+    [0, 1, 3],
+    [1, 2],
+    [2],
+    [3]
+]
+```
+
+The transitive closure of this graph would be:
+```
+[1, 1, 1, 1]
+[0, 1, 1, 0]
+[0, 0, 1, 0]
+[0, 0, 0, 1]
+```
+
+Given a graph, find its transitive closure.

@@ -1461,3 +1461,10 @@ The "look and say" sequence is defined as follows: beginning with the term 1, ea
 As an example, the fourth term is 1211, since the third term consists of one 2 and one 1.
 
 Given an integer N, print the Nth term of this sequence.
+
+## 421
+
+This problem was asked by Amazon.
+
+Given an array of a million integers between zero and a billion, out of order, how can you efficiently sort it? Assume that you cannot store an array of a billion elements in memory.
+
