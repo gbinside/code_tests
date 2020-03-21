@@ -1468,3 +1468,107 @@ This problem was asked by Amazon.
 
 Given an array of a million integers between zero and a billion, out of order, how can you efficiently sort it? Assume that you cannot store an array of a billion elements in memory.
 
+## 424
+
+This problem was asked by Facebook.
+
+Given an array of integers in which two elements appear exactly once and all other elements appear exactly twice, find the two elements that appear only once.
+
+For example, given the array [2, 4, 6, 8, 10, 2, 6, 10], return 4 and 8. The order does not matter.
+
+Follow-up: Can you do this in linear time and constant space?
+
+## 427
+
+This problem was asked by Square.
+
+A competitive runner would like to create a route that starts and ends at his house, with the condition that the route goes entirely uphill at first, and then entirely downhill.
+
+Given a dictionary of places of the form {location: elevation}, and a dictionary mapping paths between some of these locations to their corresponding distances, find the length of the shortest route satisfying the condition above. Assume the runner's home is location 0.
+
+For example, suppose you are given the following input:
+
+```
+elevations = {0: 5, 1: 25, 2: 15, 3: 20, 4: 10}
+paths = {
+    (0, 1): 10,
+    (0, 2): 8,
+    (0, 3): 15,
+    (1, 3): 12,
+    (2, 4): 10,
+    (3, 4): 5,
+    (3, 0): 17,
+    (4, 0): 10
+}
+```
+
+In this case, the shortest valid path would be `0 -> 2 -> 4 -> 0`, with a distance of 28.
+
+## 429
+
+This problem was asked by Stitch Fix.
+
+Pascal's triangle is a triangular array of integers constructed with the following formula:
+
+The first row consists of the number `1`.
+For each subsequent row, each element is the sum of the numbers directly above it, on either side.
+For example, here are the first few rows:
+
+```
+    1
+   1 1
+  1 2 1
+ 1 3 3 1
+1 4 6 4 1
+```
+Given an input `k`, return the `k`<sup>`th`</sup> row of Pascal's triangle.
+
+Bonus: Can you do this using only `O(k)` space?
+
+## 431
+
+This problem was asked by Nest.
+
+Create a basic sentence checker that takes in a stream of characters and determines whether they form valid sentences. If a sentence is valid, the program should print it out.
+
+We can consider a sentence valid if it conforms to the following rules:
+
+The sentence must start with a capital letter, followed by a lowercase letter or a space.
+All other characters must be lowercase letters, separators (`,`,`;`,`:`) or terminal marks (`.`,`?`,`!`,`‽`).
+There must be a single space between each word.
+The sentence must end with a terminal mark immediately following a word.
+
+## 433
+
+This problem was asked by Facebook.
+
+Given an integer n, find the next biggest integer with the same number of 1-bits on. For example, given the number 6 (0110 in binary), return 9 (1001).
+
+## 435
+
+This problem was asked by Google.
+
+Given pre-order and in-order traversals of a binary tree, write a function to reconstruct the tree.
+
+For example, given the following preorder traversal:
+
+```
+[a, b, d, e, c, f, g]
+```
+
+And the following inorder traversal:
+
+```
+[d, b, e, a, f, c, g]
+```
+
+You should return the following tree:
+```
+    a
+   / \
+  b   c
+ / \ / \
+d  e f  g
+```
+
+## 

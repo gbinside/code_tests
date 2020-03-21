@@ -884,3 +884,58 @@ You must buy before you can sell the stock, but you can make as many transaction
 
 For example, given [1, 3, 2, 8, 4, 10] and fee = 2, you should return 9, since you could buy the stock at 1 dollar, and sell at 8 dollars, and then buy it at 4 dollars and sell it at 10 dollars. Since we did two transactions, there is a 4 dollar fee, so we have 7 + 6 = 13 profit minus 4 dollars of fees.
 
+## 425 
+
+This problem was asked by Oracle.
+
+You are presented with an 8 by 8 matrix representing the positions of pieces on a chess board. The only pieces on the board are the black king and various white pieces. Given this matrix, determine whether the king is in check.
+
+For details on how each piece moves, see [here](https://en.wikipedia.org/wiki/Chess_piece#Moves_of_the_pieces).
+
+For example, given the following matrix:
+
+```
+...K....
+........
+.B......
+......P.
+.......R
+..N.....
+........
+.....Q..
+```
+
+You should return `True`, since the bishop is attacking the king diagonally.
+
+## 428
+
+This problem was asked by Uber.
+
+You have N stones in a row, and would like to create from them a pyramid. This pyramid should be constructed such that the height of each stone increases by one until reaching the tallest stone, after which the heights decrease by one. In addition, the start and end stones of the pyramid should each be one stone high.
+
+You can change the height of any stone by paying a cost of 1 unit to lower its height by 1, as many times as necessary. Given this information, determine the lowest cost method to produce this pyramid.
+
+For example, given the stones [1, 1, 3, 3, 2, 1], the optimal solution is to pay 2 to create [0, 1, 2, 3, 2, 1].
+
+## 430
+
+This problem was asked by Facebook.
+
+Given a string of parentheses, find the balanced string that can be produced from it using the minimum number of insertions and deletions. If there are multiple solutions, return any of them.
+
+For example, given "(()", you could return "(())". Given "))()(", you could return "()()()()".
+
+## 432 
+
+This problem was asked by Google.
+
+Design a system to crawl and copy all of Wikipedia using a distributed network of machines.
+
+More specifically, suppose your server has access to a set of client machines. Your client machines can execute code you have written to access Wikipedia pages, download and parse their data, and write the results to a database.
+
+Some questions you may want to consider as part of your solution are:
+
+- How will you reach as many pages as possible?
+- How can you keep track of pages that have already been visited?
+- How will you deal with your client machines being blacklisted?
+- How can you update your database when Wikipedia pages are added or updated?
