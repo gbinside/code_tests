@@ -1571,4 +1571,158 @@ You should return the following tree:
 d  e f  g
 ```
 
-## 
+## 461
+
+This problem was asked by Facebook.
+
+There is an N by M matrix of zeroes. Given N and M, write a function to count the number of ways of starting at the top-left corner and getting to the bottom-right corner. You can only move right or down.
+
+For example, given a 2 by 2 matrix, you should return 2, since there are two ways to get to the bottom-right:
+
+    Right, then down
+    Down, then right
+
+Given a 5 by 5 matrix, there are 70 ways to get to the bottom-right.
+
+## 437
+
+This problem was asked by Square.
+
+Given a string and a set of characters, return the shortest substring containing all the characters in the set.
+
+For example, given the string "figehaeci" and the set of characters {a, e, i}, you should return "aeci".
+
+If there is no substring containing all the characters in the set, return null.
+
+## 439
+
+This problem was asked by Facebook.
+
+Given an unordered list of flights taken by someone, each represented as (origin, destination) pairs, and a starting airport, compute the person's itinerary. If no such itinerary exists, return null. If there are multiple possible itineraries, return the lexicographically smallest one. All flights must be used in the itinerary.
+
+For example, given the list of flights [('SFO', 'HKO'), ('YYZ', 'SFO'), ('YUL', 'YYZ'), ('HKO', 'ORD')] and starting airport 'YUL', you should return the list ['YUL', 'YYZ', 'SFO', 'HKO', 'ORD'].
+
+Given the list of flights [('SFO', 'COM'), ('COM', 'YYZ')] and starting airport 'COM', you should return null.
+
+Given the list of flights [('A', 'B'), ('A', 'C'), ('B', 'C'), ('C', 'A')] and starting airport 'A', you should return the list ['A', 'B', 'C', 'A', 'C'] even though ['A', 'C', 'A', 'B', 'C'] is also a valid itinerary. However, the first one is lexicographically smaller.
+
+## 440
+
+This problem was asked by Microsoft.
+
+Describe and give an example of each of the following types of polymorphism:
+
+* Ad-hoc polymorphism
+* Parametric polymorphism
+* Subtype polymorphism
+
+## 441
+
+This problem was asked by Amazon.
+
+Given a pivot x, and a list lst, partition the list into three parts.
+
+* The first part contains all elements in lst that are less than x
+* The second part contains all elements in lst that are equal to x
+* The third part contains all elements in lst that are larger than x
+
+Ordering within a part can be arbitrary.
+
+For example, given x = 10 and lst = [9, 12, 3, 5, 14, 10, 10], one partition may be [9, 3, 5, 10, 10, 12, 14].
+
+## 443
+
+This problem was asked by Apple.
+
+Implement a queue using two stacks. Recall that a queue is a FIFO (first-in, first-out) data structure with the following methods: enqueue, which inserts an element into the queue, and dequeue, which removes it.
+
+
+## 445
+
+This question was asked by BufferBox.
+
+Given a binary tree where all nodes are either 0 or 1, prune the tree so that subtrees containing all 0s are removed.
+
+For example, given the following tree:
+
+```
+   0
+  / \
+ 1   0
+    / \
+   1   0
+  / \
+ 0   0
+```
+
+should be pruned to:
+
+```
+   0
+  / \
+ 1   0
+    /
+   1
+```
+
+We do not remove the tree at the root or its left child because it still has a 1 as a descendant.
+
+## 446
+
+This problem was asked by Indeed.
+
+Given a 32-bit positive integer N, determine whether it is a power of four in faster than O(log N) time.
+
+## 447
+
+This problem was asked by Google.
+
+Implement integer exponentiation. That is, implement the pow(x, y) function, where x and y are integers and returns x^y.
+
+Do this faster than the naive method of repeated multiplication.
+
+For example, pow(2, 10) should return 1024.
+
+## 454
+
+This problem was asked by Facebook.
+
+Describe an algorithm to compute the longest increasing subsequence of an array of numbers in O(n log n) time
+
+## 455
+
+This problem was asked by Dropbox.
+
+Conway's Game of Life takes place on an infinite two-dimensional board of square cells. Each cell is either dead or alive, and at each tick, the following rules apply:
+
+* Any live cell with less than two live neighbours dies.
+* Any live cell with two or three live neighbours remains living.
+* Any live cell with more than three live neighbours dies.
+* Any dead cell with exactly three live neighbours becomes a live cell.
+
+A cell neighbours another cell if it is horizontally, vertically, or diagonally adjacent.
+
+Implement Conway's Game of Life. It should be able to be initialized with a starting list of live cell coordinates and the number of steps it should run for. Once initialized, it should print out the board state at each step. Since it's an infinite board, print out only the relevant coordinates, i.e. from the top-leftmost live cell to bottom-rightmost live cell.
+
+You can represent a live cell with an asterisk (*) and a dead cell with a dot (.).
+
+## 460
+
+This problem was asked by LinkedIn.
+
+You are given a string consisting of the letters `x` and `y`, such as `xyxxxyxyy`. In addition, you have an operation called flip, which changes a single `x` to `y` or vice versa.
+
+Determine how many times you would need to apply this operation to ensure that all `x`'s come before all `y`'s. In the preceding example, it suffices to flip the second and sixth characters, so you should return 2.
+
+## 459
+
+This problem was asked by Uber.
+
+Write a program that determines the smallest number of perfect squares that sum up to `N`.
+
+Here are a few examples:
+
+* Given `N = 4`, return `1` (4)
+* Given `N = 17`, return `2` (16 + 1)
+* Given `N = 18`, return `2` (9 + 9)
+

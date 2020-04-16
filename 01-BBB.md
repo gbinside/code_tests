@@ -1686,3 +1686,98 @@ Given a binary search tree, find the floor and ceiling of a given integer. The f
 
 If either value does not exist, return None.
 
+## 438
+
+This problem was asked by Amazon.
+
+Implement a stack API using only a heap. A stack implements the following methods:
+
+* push(item), which adds an element to the stack
+* pop(), which removes and returns the most recently added element (or throws an error if there is nothing on the stack)
+
+Recall that a heap has the following operations:
+
+* push(item), which adds a new key to the heap
+* pop(), which removes and returns the max value of the heap
+
+## 449
+
+This problem was asked by Alibaba.
+
+Given an even number (greater than 2), return two prime numbers whose sum will be equal to the given number.
+
+A solution will always exist. See Goldbach’s conjecture. [https://en.wikipedia.org/wiki/Goldbach%27s_conjecture]
+
+Example:
+
+```
+Input: 4
+Output: 2 + 2 = 4
+```
+
+If there are more than one solution possible, return the lexicographically smaller solution.
+
+If [a, b] is one solution with a <= b, and [c, d] is another solution with c <= d, then
+
+```
+[a, b] < [c, d]
+```
+
+If a < c OR a==c AND b < d.
+
+## 456
+
+This problem was asked by Amazon.
+
+You are given a list of data entries that represent entries and exits of groups of people into a building. An entry looks like this:
+
+```
+{"timestamp": 1526579928, count: 3, "type": "enter"}
+```
+
+This means 3 people entered the building. An exit looks like this:
+
+```
+{"timestamp": 1526580382, count: 2, "type": "exit"}
+```
+
+This means that 2 people exited the building. timestamp is in Unix time.
+
+Find the busiest period in the building, that is, the time with the most people in the building. Return it as a pair of (start, end) timestamps. You can assume the building always starts off and ends up empty, i.e. with 0 people inside.
+
+## 452
+
+This problem was asked by Microsoft.
+
+Let's represent an integer in a linked list format by having each node represent a digit in the number. The nodes make up the number in reversed order.
+
+For example, the following linked list:
+
+```
+1 -> 2 -> 3 -> 4 -> 5
+```
+
+is the number 54321.
+
+Given two linked lists in this format, return their sum in the same linked list format.
+
+For example, given
+
+```
+9 -> 9
+```
+```
+5 -> 2
+```
+return 124 (99 + 25) as:
+```
+4 -> 2 -> 1
+```
+
+## 451
+
+This problem was asked by Apple.
+
+Implement the function `fib(n)`, which returns the `n` <sup>`th`</sup> number in the Fibonacci sequence, using only `O(1)` space.
+
+

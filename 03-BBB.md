@@ -939,3 +939,113 @@ Some questions you may want to consider as part of your solution are:
 - How can you keep track of pages that have already been visited?
 - How will you deal with your client machines being blacklisted?
 - How can you update your database when Wikipedia pages are added or updated?
+
+## 436
+
+This problem was asked by Microsoft.
+
+Implement 3 stacks using a single list:
+
+```
+class Stack:
+    def __init__(self):
+        self.list = []
+
+    def pop(self, stack_number):
+        pass
+
+    def push(self, item, stack_number):
+        pass
+```
+
+## 442
+
+This problem was asked by Netflix.
+
+A Cartesian tree with sequence S is a binary tree defined by the following two properties:
+
+- It is heap-ordered, so that each parent value is strictly less than that of its children.
+- An in-order traversal of the tree produces nodes with values that correspond exactly to S.
+
+For example, given the sequence `[3, 2, 6, 1, 9]`, the resulting Cartesian tree would be:
+
+```
+      1
+    /   \   
+  2       9
+ / \
+3   6
+```
+
+Given a sequence `S`, construct the corresponding Cartesian tree.
+
+## 444
+
+This problem was asked by Dropbox.
+
+Implement an efficient string matching algorithm.
+
+That is, given a string of length `N` and a pattern of length `k`, write a program that searches for the pattern in the string with less than `O(N * k)` worst-case time complexity.
+
+If the pattern is found, return the start index of its location. If not, return `False`.
+
+## 448
+
+This problem was asked by Google.
+
+Given an array of strictly the characters 'R', 'G', and 'B', segregate the values of the array so that all the Rs come first, the Gs come second, and the Bs come last. You can only swap elements of the array.
+
+Do this in linear time and in-place.
+
+For example, given the array ['G', 'B', 'R', 'R', 'B', 'R', 'G'], it should become ['R', 'R', 'R', 'G', 'G', 'B', 'B'].
+
+## 450
+
+This problem was asked by Google.
+
+You're given a string consisting solely of `(`, `)`, and `*`. `*` can represent either a `(`, `)`, or an empty string. Determine whether the parentheses are balanced.
+
+For example, `(()*` and `(*)` are balanced. `)*(` is not balanced.
+
+## 457
+
+This problem was asked by Google.
+
+Given a word `W` and a string `S`, find all starting indices in `S` which are anagrams of `W`.
+
+For example, given that `W` is `"ab"`, and `S` is `"abxaba"`, return 0, 3, and 4.
+
+## 458
+
+This problem was asked by Uber.
+
+A rule looks like this:
+
+```
+A NE B
+```
+
+This means this means point A is located northeast of point B.
+
+```
+A SW C
+```
+
+means that point A is southwest of C.
+
+Given a list of rules, check if the sum of the rules validate. For example:
+
+```
+A N B
+B NE C
+C N A
+```
+
+does not validate, since A cannot be both north and south of C.
+
+```
+A NW B
+A N B
+```
+
+is considered valid.
