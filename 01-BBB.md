@@ -1781,3 +1781,70 @@ This problem was asked by Apple.
 Implement the function `fib(n)`, which returns the `n` <sup>`th`</sup> number in the Fibonacci sequence, using only `O(1)` space.
 
 
+## 463 duplicated of 290
+
+This problem was asked by Facebook.
+
+On a mysterious island there are creatures known as Quxes which come in three colors: red, green, and blue. One power of the Qux is that if two of them are standing next to each other, they can transform into a single creature of the third color.
+
+Given N Quxes standing in a line, determine the smallest number of them remaining after any possible sequence of such transformations.
+
+For example, given the input `['R', 'G', 'B', 'G', 'B']`, it is possible to end up with a single Qux through the following steps:
+
+```
+        Arrangement       |   Change
+----------------------------------------
+['R', 'G', 'B', 'G', 'B'] | (R, G) -> B
+['B', 'B', 'G', 'B']      | (B, G) -> R
+['B', 'R', 'B']           | (R, B) -> G
+['B', 'G']                | (B, G) -> R
+['R']                     |
+```
+
+```python
+# evoltion rules
+son={
+    frozenset({'R','G'}): 'B',
+    frozenset({'R','B'}): 'G', 
+    frozenset({'B','G'}): 'R'
+}
+
+def fx(l):
+    """
+    compute all possible next steps of a sequence `l`
+    """
+	for n,(a,b) in enumerate(zip(l,l[1:])):
+		if a!=b:
+			yield l[:n] + [son[frozenset((a,b))]] + l[n+2:]
+
+
+def solution(l):
+	stack = [l]
+	already_seen = set()  # this is to avoid following multiple identical paths
+	while stack:
+		x = stack.pop()
+		if tuple(x) in already_seen:
+			continue
+		else:
+			already_seen.add(tuple(x))
+		y = None
+		for y in fx(x):
+		    stack.append(y)
+		if y is None:  # if there is no possible evolution, yield the current value as a final one.
+		    yield x
+
+# example
+>>> _in = list("RGBGGRGRBR")
+>>> min(solution(_in))
+['B', 'B']
+>>> list(solution(_in))
+[['R', 'R'], ['B', 'B'], ['G', 'G'], ['R', 'R', 'R', 'R'], ['B', 'B', 'B', 'B'], ['G', 'G', 'G', 'G']]
+>>> 
+
+# example from the problem
+>>> list(solution(list('RGBGB')))
+[['R'], ['R', 'R', 'R']]
+>>> min(solution(list('RGBGB')))
+['R']
+
+```
