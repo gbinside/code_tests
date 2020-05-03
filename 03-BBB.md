@@ -96,8 +96,11 @@ And here are examples of non-numbers:
 ## 138
 
 This problem was asked by Google.
+
 Find the minimum number of coins required to make n cents.
+
 You can use standard American denominations, that is, 1¢, 5¢, 10¢, and 25¢.
+
 For example, given n = 16, return 3 since we can make it with a 10¢, a 5¢, and a 1¢
 
 ## 141
@@ -220,7 +223,9 @@ For example, given 156, you should return 3.
 ## 217
 
 This problem was asked by Oracle.
+
 We say a number is sparse if there are no adjacent ones in its binary representation. For example, 21 (10101) is sparse, but 22 (10110) is not. For a given input N, find the smallest sparse number greater than or equal to N.
+
 Do this in faster than O(N log N) time.
 
 ## 219
@@ -1049,3 +1054,10 @@ A N B
 ```
 
 is considered valid.
+
+## 478
+
+This problem was asked by Google.
+
+Implement a file syncing algorithm for two computers over a low-bandwidth network. What if we know the files in the two computers are mostly the same?
+

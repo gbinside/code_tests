@@ -6,10 +6,10 @@ Normally solved with BackTracing.
 SIZE = 8
 
 def calc_moves(board, row):
-    moves = list(range(SIZE))  # I can do all this move 0..N-1, then I remove some of them
+    moves = list(range(SIZE))  # I can do all this moves 0..N-1, then I remove some of them
     if row in board:
         moves = [x for x in moves if x>board[row]]  # if I am recomputing a line I already have, I consider higher Queen position than the last tried.
-    for k,v in board.items():
+    for k,v in board.items():  # for all the queens already on the board
         if k>=row:  # if I am on the same row or a bigger one, skip, I am backtracing
             continue
         try:
@@ -26,7 +26,10 @@ def calc_moves(board, row):
             pass
     return moves
 
-def n(board=None):
+def n(board=None): 
+    """
+    compute the next board, given a board as a dict of queens positions [row]->column
+    """
     if board is None:
         board = dict()  # the board is an dict [row(0..N-1)] => queen_position(0..N-1)
     row = len(board)  # row to compute

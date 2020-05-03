@@ -553,6 +553,14 @@ you should return:
  [9, 6, 3]]
 Follow-up: What if you couldn't use any extra space?
 
+```python
+>>> a = [[1, 2, 3],
+ [4, 5, 6],
+ [7, 8, 9]]
+>>> list(zip(*a[::-1]))
+[(7, 4, 1), (8, 5, 2), (9, 6, 3)]
+```
+
 ## 166
 
 This problem was asked by Uber.
@@ -1722,7 +1730,50 @@ Write a program that determines the smallest number of perfect squares that sum 
 
 Here are a few examples:
 
-* Given `N = 4`, return `1` (4)
-* Given `N = 17`, return `2` (16 + 1)
-* Given `N = 18`, return `2` (9 + 9)
+- Given `N = 4`, return `1` (4)
+- Given `N = 17`, return `2` (16 + 1)
+- Given `N = 18`, return `2` (9 + 9)
 
+## 472
+
+This problem was asked by Facebook.
+
+Given the mapping a = 1, b = 2, ... z = 26, and an encoded message, count the number of ways it can be decoded.
+
+For example, the message '111' would give 3, since it could be decoded as 'aaa', 'ka', and 'ak'.
+
+You can assume that the messages are decodable. For example, '001' is not allowed.
+
+## 469 (361)
+
+This problem was asked by Facebook.
+
+Mastermind is a two-player game in which the first player attempts to guess the secret code of the second. In this version, the code may be any six-digit number with all distinct digits.
+
+Each turn the first player guesses some number, and the second player responds by saying how many digits in this number correctly matched their location in the secret code. For example, if the secret code were `123456`, then a guess of `175286` would score two, since `1` and `6` were correctly placed.
+
+Write an algorithm which, given a sequence of guesses and their scores, determines whether there exists some secret code that could have produced them.
+
+For example, for the following scores you should return `True`, since they correspond to the secret code `123456`:
+
+```python
+{175286: 2, 293416: 3, 654321: 0}
+```
+
+However, it is impossible for any key to result in the following scores, so in this case you should return False:
+
+```python
+{123456: 4, 345678: 4, 567890: 4}
+```
+
+## 470
+
+This problem was asked by Google.
+
+Given an array of numbers and an index `i`, return the index of the nearest larger number of the number at index `i`, where distance is measured in array indices.
+
+For example, given `[4, 1, 3, 5, 6]` and index `0`, you should return `3`.
+
+If two distances to larger numbers are the equal, then return any one of them. If the array at `i` doesn't have a nearest larger integer, then return `null`.
+
+Follow-up: If you can preprocess the array, can you do this in constant time?
