@@ -1,16 +1,36 @@
 # Hard Questions
 
-## 64
+## 19 Houses
 
-A knight's tour is a sequence of moves by a knight on a chessboard such that all squares are visited once.
-Given N, write a function to return the number of knight's tours on an N by N chessboard.
+A builder is looking to build a row of N houses that can be of K different colors. He has a goal of minimizing cost while ensuring that no two neighboring houses are of the same color.
+Given an N by K matrix where the nth row and kth column represents the cost to build the nth house with kth color, return the minimum cost which achieves this goal.
 
-## 52
+## 52 Least Recently Used
 
 Implement an LRU (Least Recently Used) cache. It should be able to be initialized with a cache size n, and contain the following methods:
 set(key, value): sets key to value. If there are already n items in the cache and we are adding a new item, then it should also remove the least recently used item.
 get(key): gets the value at key. If no such key exists, return null.
 Each operation should run in O(1) time.
+
+## 54 Sudoku
+
+Sudoku is a puzzle where you're given a partially-filled 9 by 9 grid with digits. The objective is to fill the grid with the constraint that every row, column, and box (3 by 3 subgrid) must contain all of the digits from 1 to 9.
+Implement an efficient sudoku solver.
+
+## 57 Break Text
+
+Given a string s and an integer k, break up the string into multiple texts such that each text has a length of k or less. You must break it up so that words don't break across lines. If there's no way to break the text up, then return null.
+You can assume that there are no spaces at the ends of the string and that there is exactly one space between each word.
+For example, given the string "the quick brown fox jumps over the lazy dog" and k = 10, you should return: ["the quick", "brown fox", "jumps over", "the lazy", "dog"]. No string in the list has a length of more than 10.
+
+## 59 file syncing
+
+Implement a file syncing algorithm for two computers over a low-bandwidth network. What if we know the files in the two computers are mostly the same?
+
+## 64
+
+A knight's tour is a sequence of moves by a knight on a chessboard such that all squares are visited once.
+Given N, write a function to return the number of knight's tours on an N by N chessboard.
 
 ## 75
 
