@@ -1,6 +1,195 @@
 # Easy questions
 
+## Sum of numbers
+
+Given a list of numbers and a number `k`, return whether any two numbers from the list add up to `k`.
+
+For example, given `[10, 15, 3, 7]` and `k` of 17, return **true** since 10 + 7 is 17.
+
+*Bonus: Can you do this in one pass?*
+
+## Url shortner
+
+Implement a URL shortener with the following methods:
+
+- `shorten(url)`, which shortens the url into a six-character alphanumeric string, such as `zLg6wl`.
+- `restore(short)`, which expands the shortened string into the original url. If no such shortened string exists, return `null`.
+
+Hint: What if we enter the same URL twice?
+
+## 47
+
+Given a array of numbers representing the stock prices of a company in chronological order, write a function that calculates the maximum profit you could have made from buying and selling that stock once. You must buy before you can sell it.
+For example, given [9, 11, 8, 5, 7, 10], you should return 5, since you could buy the stock at 5 dollars and sell it at 10 dollars.
+
+## 63 Kids Game
+
+Given a 2D matrix of characters and a target word, write a function that returns whether the word can be found in the matrix by going left-to-right, or up-to-down.
+For example, given the following matrix:
+```
+[['F', 'A', 'C', 'I'],
+ ['O', 'B', 'Q', 'P'],
+ ['A', 'N', 'O', 'B'],
+ ['M', 'A', 'S', 'S']]
+```
+and the target word 'FOAM', you should return true, since it's the leftmost column. Similarly, given the target word 'MASS', you should return true, since it's the last row.
+
+## 65 Spiral Print
+
+Given a N by M matrix of numbers, print out the matrix in a clockwise spiral.
+For example, given the following matrix:
+
+```
+[[1,  2,  3,  4,  5],
+ [6,  7,  8,  9,  10],
+ [11, 12, 13, 14, 15],
+ [16, 17, 18, 19, 20]]
+```
+
+You should print out the following:
+
+```
+1
+2
+3
+4
+5
+10
+15
+20
+19
+18
+17
+16
+11
+6
+7
+8
+9
+14
+13
+12
+```
+
+## 69 Product of numbers
+
+Given a list of integers, return the largest product that can be made by multiplying any three integers.
+For example, if the list is [-10, -10, 5, 2], we should return 500, since that's -10 * -10 * 5.
+You can assume the list has at least three integers.
+
+## Product of numbers
+
+Given an array of integers, return a new array such that each element at index `i` of the new array is the product of all the numbers in the original array except the one at `i`. There are never zeros in the input array.
+
+For example, if our input was `[1, 2, 3, 4, 5]`, the expected output would be `[120, 60, 40, 30, 24]`. If our input was `[3, 2, 1]`, the expected output would be `[2, 3, 6]`.
+
+*Follow-up: what if you can't use division?*
+
+### first solution
+
+For first we compute the product of all the elements of the array.
+
+```python
+product = 1
+for x in input_list:
+    product *= x
+```
+
+now we create a new array with element the product divided by the element in the same position in the input_list
+
+```python
+result_list = [product / float(x) for x in input_list]
+```
+
+this works because of the properties of multiplicaion and divisions
+
+#### note on python3
+
+We could use `reduce` for the product of all the elements of an array in this way:
+
+```python
+product = reduce(lambda prev, curr: prev*curr, input_list, 1)
+```
+
+But in python3 `reduce` is no more a primitive statement, but you need to import it from the `functools` module, because the guide line is that a `for` loop is more readable.
+
+### without the division.
+
+if you cheat from the mathematically point of view you can do
+
+```python
+result_list = [product * (x**-1) for x in input_list]
+```
+
+but probably this is not what the interviewer wants.
+
+We can compute 2 lists, one with the product from the start of the list upto the current element, and another in the same way, but reversing the input_list before. So after this we do:
+
+```python
+p = 1
+prod_array = []
+for x in input_list:
+    prod_array.append(p)
+    p *= x
+
+p = 1
+prod_reverse_array = []
+for x in input_list[::-1]:
+    prod_reverse_array.append(p)
+    p *= x
+```
+
+and we get 
+
+```python
+prod_array == [1, 1, 2, 6, 24]
+prod_reverse_array[::-1] == [120, 60, 20, 5, 1]
+```
+
+if we zip together the 2 lists multipling, we get
+
+```python
+result = [x*y for x,y in zip(prod_array, prod_reverse_array[::-1])]
+```
+
+#### all the code together
+
+```python
+def solution(input_list):
+    p = 1
+    prod_array = []
+    for x in input_list:
+        prod_array.append(p)
+        p *= x
+
+    p = 1
+    prod_reverse_array = []
+    for x in input_list[::-1]:
+        prod_reverse_array.append(p)
+        p *= x
+
+    result = [x*y for x,y in zip(prod_array, prod_reverse_array[::-1])]
+    return result
+```
+
+## Operation tree
+
+Suppose an arithmetic expression is given as a binary tree. Each leaf is an integer and each internal node is one of '+', '-', '*', or '/'.
+Given the root to such a tree, write a function to evaluate it.
+For example, given the following tree:
+
+```
+    *
+   / \
+  +    +
+ / \  / \
+3  2  4  5
+```
+
+You should return 45, as it is `(3 + 2) * (4 + 5)`.
+
 ## 73
+
 This problem was asked by Google.
 Given the head of a singly linked list, reverse it in-place.
 
