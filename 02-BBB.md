@@ -1766,7 +1766,7 @@ However, it is impossible for any key to result in the following scores, so in t
 {123456: 4, 345678: 4, 567890: 4}
 ```
 
-## 470
+## 470 (144)
 
 This problem was asked by Google.
 
