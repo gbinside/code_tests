@@ -1,5 +1,53 @@
 # Medium Questions
 
+## 20 Linked Lists
+
+Given two singly linked lists that intersect at some point, find the intersecting node. The lists are non-cyclical.
+For example, given A = 3 -> 7 -> 8 -> 10 and B = 99 -> 1 -> 8 -> 10, return the node with value 8.
+In this example, assume nodes with the same value are the exact same node objects.
+Do this in O(M + N) time (where M and N are the lengths of the lists) and constant space.
+
+## 26 Linked Lists Removing
+
+Given a singly linked list and an integer k, remove the kth last element from the list. k is guaranteed to be smaller than the length of the list.
+The list is very long, so making more than one pass is prohibitively expensive.
+
+Do this in constant space and in one pass.
+
+## 51 Deck Shuffle
+
+Given a function that generates perfectly random numbers between 1 and k (inclusive), where k is an input, write a function that shuffles a deck of cards represented as an array using only swaps.
+
+It should run in O(N) time.
+
+Hint: Make sure each one of the 52! permutations of the deck is equally likely.
+
+## 53 Queue
+
+Implement a queue using two stacks. Recall that a queue is a FIFO (first-in, first-out) data structure with the following methods: enqueue, which inserts an element into the queue, and dequeue, which removes it.
+
+## 56 Color a Graph
+
+Given an undirected graph represented as an adjacency matrix and an integer k, write a function to determine whether each vertex in the graph can be colored such that no two adjacent vertices share the same color using at most k colors.
+
+## 58 Rolled Sorted Array
+
+An sorted array of integers was rotated an unknown number of times.
+Given such an array, find the index of the element in the array in faster than linear time. If the element doesn't exist in the array, return null.
+For example, given the array [13, 18, 25, 2, 8, 10] and the element 8, return 4 (the index of 8 in the array).
+You can assume all the integers in the array are unique.
+
+## 60 multiset sums
+
+Given a multiset of integers, return whether it can be partitioned into two subsets whose sums are the same.
+For example, given the multiset {15, 5, 20, 10, 35, 15, 10}, it would return true, since we can split it up into {15, 5, 10, 15, 10} and {20, 35}, which both add up to 55.
+Given the multiset {15, 5, 20, 10, 35}, it would return false, since we can't split it up into two subsets that add up to the same sum.
+
+## 66 Biased Coin Toss
+
+Assume you have access to a function toss_biased() which returns 0 or 1 with a probability that's not 50-50 (but also not 0-100 or 100-0). You do not know the bias of the coin.
+Write a function to simulate an unbiased coin toss.
+
 ## 68
 
 On our special chessboard, two bishops attack each other if they share the same diagonal. This includes bishops that have another bishop located between them, i.e. bishops can attack through pieces.
