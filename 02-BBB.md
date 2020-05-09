@@ -1167,7 +1167,7 @@ def reduce(lst, fx, ret):
 ```
 
 
-## 343
+## 343 - duplicate 482
 
 This problem was asked by Google.
 

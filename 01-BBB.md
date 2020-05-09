@@ -322,11 +322,11 @@ The power set of a set is the set of all its subsets. Write a function that, giv
 For example, given the set {1, 2, 3}, it should return {{}, {1}, {2}, {3}, {1, 2}, {1, 3}, {2, 3}, {1, 2, 3}}.
 You may also use a list or array to represent a set.
 
-## 36
+## 36 - duplciate 484 medium
 
 This problem was asked by Dropbox.
+
 Given the root to a binary search tree, find the second largest node in the tree.
-Upgrade to premium and get in-depth solutions to every problem. Since you were referred by one of our affiliates, you'll get a 10% discount on checkout!
 
 ## 35
 
@@ -433,7 +433,7 @@ For example, given the following board:
 [f, f, f, f]]
 and start = (3, 0) (bottom left) and end = (0, 0) (top left), the minimum number of steps required to reach the end is 7, since we would need to go through (1, 2) because there is a wall everywhere else on the second row.
 
-## 22
+## 22 - 480 medium
 
 This problem was asked by Microsoft.
 Given a dictionary of words and a string made up of those words (no spaces), return the original sentence in a list. If there is more than one possible reconstruction, return any of them. If there is no possible reconstruction, then return null.
@@ -979,9 +979,10 @@ Given a sorted array, find the smallest positive integer that is not the sum of 
 For example, for the input [1, 2, 3, 10], you should return 7.
 Do this in O(N) time.
 
-## 225
+## 225 - duplicate 483
 
 This problem was asked by Bloomberg.
+
 There are N prisoners standing in a circle, waiting to be executed. The executions are carried out starting with the kth person, and removing every successive kth person going clockwise until there is no one left.
 Given N and k, write an algorithm to determine where a prisoner should stand in order to be the last survivor.
 For example, if N = 5 and k = 2, the order of executions would be [2, 4, 1, 5, 3], so you should return 3.
