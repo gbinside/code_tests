@@ -609,7 +609,7 @@ Write an algorithm that finds an appropriate Y array with the following properti
 * The absolute pairwise difference between elements is minimized. In other words, |x1- y1| + |x2- y2| + ... + |xn- yn| should be as small as possible.
 For example, suppose your input is [1.3, 2.3, 4.4]. In this case you cannot do better than [1, 2, 5], which has an absolute difference of |1.3 - 1| + |2.3 - 2| + |4.4 - 5| = 1.
 
-## 356
+## 356 (dup 488)
 
 This problem was asked by Netflix.
 
@@ -1080,4 +1080,12 @@ is considered valid.
 This problem was asked by Google.
 
 Implement a file syncing algorithm for two computers over a low-bandwidth network. What if we know the files in the two computers are mostly the same?
+
+## 485 
+
+This problem was asked by Amazon.
+
+Given an integer k and a string s, find the length of the longest substring that contains at most k distinct characters.
+
+For example, given s = "abcba" and k = 2, the longest substring with k distinct characters is "bcb".
 

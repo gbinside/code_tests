@@ -871,11 +871,13 @@ Intervals can "touch", such as [0, 1] and [1, 2], but they won't be considered o
 For example, given the intervals (7, 9), (2, 4), (5, 8), return 1 as the last interval can be removed and the first two won't overlap.
 The intervals are not necessarily sorted in any order.
 
-## 189
-
+## 189 (dup 489)
+ 
 This problem was asked by Google.
+
 Given an array of elements, return the length of the longest subarray where all its elements are distinct.
-For example, given the array [5, 1, 3, 5, 2, 3, 4, 1], return 5 as the longest subarray of distinct elements is [5, 2, 3, 4, 1].
+
+For example, given the array `[5, 1, 3, 5, 2, 3, 4, 1]`, return 5 as the longest subarray of distinct elements is `[5, 2, 3, 4, 1]`.
 
 ## 187
 
@@ -926,10 +928,10 @@ You are given an array of arrays of integers, where each array corresponds to a 
 We define a path in the triangle to start at the top and go down one row at a time to an adjacent value, eventually ending with an entry on the bottom row. For example, 1 -> 3 -> 5. The weight of the path is the sum of the entries.
 Write a program that returns the weight of the maximum weight path.
 
-## 202
+## 202 (dup 491)
 
 This problem was asked by Palantir.
-Write a program that checks whether an integer is a palindrome. For example, 121 is a palindrome, as well as 888. 678 is not a palindrome. Do not convert the integer into a string.
+Write a program that checks whether an integer is a palindrome. For example, `121` is a palindrome, as well as `888`. `678` is not a palindrome. Do not convert the integer into a string.
 
 ## 204
 
