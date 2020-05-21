@@ -893,7 +893,7 @@ The sequence [0, 1, ..., N] has been jumbled, and the only clue you have for its
 This problem was asked by Mozilla.
 A bridge in a connected (undirected) graph is an edge that, if removed, causes the graph to become disconnected. Find all the bridges in a graph.
 
-## 263
+## 263 (dup 431)
 
 This problem was asked by Nest.
 Create a basic sentence checker that takes in a stream of characters and determines whether they form valid sentences. If a sentence is valid, the program should print it out.
@@ -1848,3 +1848,9 @@ For example, given `[4, 1, 3, 5, 6]` and index `0`, you should return `3`.
 If two distances to larger numbers are the equal, then return any one of them. If the array at `i` doesn't have a nearest larger integer, then return `null`.
 
 Follow-up: If you can preprocess the array, can you do this in constant time?
+
+## 495
+
+This problem was asked by Facebook.
+
+Given a stream of elements too large to store in memory, pick a random element from the stream with uniform probability.
