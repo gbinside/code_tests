@@ -427,11 +427,15 @@ This problem was asked by Google.
 You are given an M by N matrix consisting of booleans that represents a board. Each True boolean represents a wall. Each False boolean represents a tile you can walk on.
 Given this matrix, a start coordinate, and an end coordinate, return the minimum number of steps required to reach the end coordinate from the start. If there is no possible path, then return null. You can move up, left, down, and right. You cannot move through walls. You cannot wrap around the edges of the board.
 For example, given the following board:
+
+```python
 [[f, f, f, f],
 [t, t, f, t],
 [f, f, f, f],
 [f, f, f, f]]
-and start = (3, 0) (bottom left) and end = (0, 0) (top left), the minimum number of steps required to reach the end is 7, since we would need to go through (1, 2) because there is a wall everywhere else on the second row.
+```
+
+and start = `(3, 0)` (bottom left) and end = `(0, 0)` (top left), the minimum number of steps required to reach the end is 7, since we would need to go through `(1, 2)` because there is a wall everywhere else on the second row.
 
 ## 22 - 480 medium
 
@@ -1023,6 +1027,7 @@ Implement the function fib(n), which returns the nth number in the Fibonacci seq
 ## 247
 
 This problem was asked by PayPal.
+
 Given a binary tree, determine whether or not it is height-balanced. A height-balanced binary tree can be defined as one in which the heights of the two subtrees of any node never differ by more than one.
 
 ## 244
@@ -1993,6 +1998,9 @@ For example, given the input `['R', 'G', 'B', 'G', 'B']`, it is possible to end 
 ['R']                     |
 ```
 
+
+### Solution 463
+
 ```python
 # evoltion rules
 son={
@@ -2039,4 +2047,61 @@ def solution(l):
 >>> min(solution(list('RGBGB')))
 ['R']
 
+```
+
+## 504
+
+This problem was asked by Twitter.
+
+You run an e-commerce website and want to record the last `N` `order ids` in a log.
+
+Implement a data structure to accomplish this, with the following API:
+
+* `record(order_id)`: adds the order_id to the log
+* `get_last(i)`: gets the ith last element from the log. i is guaranteed to be smaller than or equal to N.
+
+You should be as efficient with time and space as possible.
+
+### Solution 504
+
+Circular buffer
+
+```python
+
+class LastOrders:
+    def __init__(self, n):
+        self._ptr = 0
+        self._n = n
+        self._buffer = [None] * n
+
+    def record(self, order_id):
+        self._buffer[self._ptr] = order_id
+        self._ptr += 1
+        self._ptr %= self._n
+
+    def get_last(self, i):
+        if i>self._n:
+            raise ValueError()
+        start = self._ptr - i
+        if start < 0:
+            return self._buffer[start % self._n :] + self._buffer[: self._ptr]
+        return self._buffer[start: self._ptr]
+```
+
+What if we ask for more elements than what we put in ?
+
+We will get some `None` in the list. We can always filter them out.
+
+```
+>>> l = LastOrders(10)
+>>> l.record(1231231)
+>>> l.get_last(1)
+[1231231]
+>>> l.get_last(2)
+[None, 1231231]
+>>> l.record(12311)
+>>> l.get_last(2)
+[1231231, 12311]
+>>> l.get_last(3)
+[None, 1231231, 12311]
 ```

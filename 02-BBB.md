@@ -20,7 +20,7 @@ Given a function that generates perfectly random numbers between 1 and k (inclus
 
 It should run in O(N) time.
 
-Hint: Make sure each one of the 52! permutations of the deck is equally likely.
+Hint: Make sure each one of the `52!` permutations of the deck is equally likely.
 
 ## 53 Queue
 
@@ -567,8 +567,10 @@ The order of the indices does not matter.
 ## 169
 
 This problem was asked by Google.
+
 Given a linked list, sort it in O(n log n) time and constant space.
-For example, the linked list 4 -> 1 -> -3 -> 99 should become -3 -> 1 -> 4 -> 99.
+
+For example, the linked list `4 -> 1 -> -3 -> 99` should become `-3 -> 1 -> 4 -> 99`.
 
 ## 174
 
@@ -858,7 +860,10 @@ t     a     g
 
 This problem was asked by Yahoo.
 Recall that a full binary tree is one in which each node is either a leaf node, or has two children. Given a binary tree, convert it to a full one by removing nodes with only one child.
+
 For example, given the following tree:
+
+```
          0
       /     \
     1         2
@@ -866,12 +871,18 @@ For example, given the following tree:
 3                 4
   \             /   \
     5          6     7
+```
+
 You should convert it to:
+
+```
      0
   /     \
 5         4
         /   \
        6     7
+```
+
 
 ## 256
 
@@ -881,7 +892,8 @@ Given a linked list, rearrange the node values such that they appear in alternat
 ## 257
 
 This problem was asked by WhatsApp.
-Given an array of integers out of order, determine the bounds of the smallest window that must be sorted in order for the entire array to be sorted. For example, given [3, 7, 5, 6, 9], you should return (1, 3).
+
+Given an array of integers out of order, determine the bounds of the smallest window that must be sorted in order for the entire array to be sorted. For example, given `[3, 7, 5, 6, 9]`, you should return `(1, 3)`.
 
 ## 260
 
