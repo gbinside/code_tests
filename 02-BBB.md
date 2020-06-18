@@ -227,6 +227,7 @@ For example, this matrix has 4 islands.
 This problem was asked by Facebook.
 
 Given three 32-bit integers x, y, and b, return x if b is 1 and y if b is 0, using only mathematical or bit operations. You can assume b can only be 1 or 0.
+
 ```cpp
 return (x * b) | ((1-b) * y); 
 ``` 
@@ -708,8 +709,9 @@ Given an undirected graph G, check whether it is bipartite. Recall that a graph 
 ## 208
 
 This problem was asked by LinkedIn.
-Given a linked list of numbers and a pivot k, partition the linked list so that all nodes less than k come before nodes greater than or equal to k. 
-For example, given the linked list 5 -> 1 -> 8 -> 0 -> 3 and k = 3, the solution could be 1 -> 0 -> 5 -> 8 -> 3.
+Given a linked list of numbers and a pivot k, partition the linked list so that all nodes less than k come before nodes greater than or equal to k.
+
+For example, given the linked list `5 -> 1 -> 8 -> 0 -> 3` and `k = 3`, the solution could be `1 -> 0 -> 5 -> 8 -> 3`.
 
 ## 213
 
