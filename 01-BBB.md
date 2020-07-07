@@ -772,8 +772,10 @@ pop(), which removes and returns the max value of the heap
 ## 157
 
 This problem was asked by Amazon.
+
 Given a string, determine whether any permutation of it is a palindrome.
-For example, carrace should return true, since it can be rearranged to form racecar, which is a palindrome. daily should return false, since there's no rearrangement that can form a palindrome.
+
+For example, `carrace` should return true, since it can be rearranged to form `racecar`, which is a palindrome. `daily` should return `false`, since there's no rearrangement that can form a palindrome.
 
 
 ## 159
@@ -956,11 +958,15 @@ Given an array and a permutation, apply the permutation to the array. For exampl
 ## 210
 
 This problem was asked by Apple.
+
 A Collatz sequence in mathematics can be defined as follows. Starting with any positive integer:
-if n is even, the next number in the sequence is n / 2
-if n is odd, the next number in the sequence is 3n + 1 
-It is conjectured that every such sequence eventually reaches the number 1. Test this conjecture.
-Bonus: What input n <= 1000000 gives the longest sequence?
+
+- if n is even, the next number in the sequence is `n / 2`
+- if n is odd, the next number in the sequence is `3n + 1`
+
+It is conjectured that every such sequence eventually reaches the number `1`. Test this conjecture.
+
+Bonus: What input `n <= 1000000` gives the longest sequence?
 
 ## 212
 
@@ -2111,4 +2117,10 @@ We will get some `None` in the list. We can always filter them out.
 This problem was asked by Microsoft.
 
 Given an array of numbers and a number k, determine if there are three entries in the array which add up to the specified number k. For example, given `[20, 303, 3, 4, 25]` and `k = 49`, return `true` as 20 + 4 + 25 = 49.
+
+## 539 
+
+This problem was asked by Pandora.
+
+Given an undirected graph, determine if it contains a cycle.
 
