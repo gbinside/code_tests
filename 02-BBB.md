@@ -1879,3 +1879,17 @@ Write an algorithm that finds the minimum number of trial drops it will take, in
 
 For example, if `N = 1` and `k = 5`, we will need to try dropping the egg at every floor, beginning with the first, until we reach the fifth floor, so our solution will be `5`.
 
+## 546
+
+This problem was asked by Google.
+
+Given an array of integers, return a new array where each element in the new array is the number of smaller elements to the right of that element in the original input array.
+
+For example, given the array `[3, 4, 9, 6, 1]`, return `[1, 1, 2, 1, 0]`, since:
+
+* There is 1 smaller element to the right of 3
+* There is 1 smaller element to the right of 4
+* There are 2 smaller elements to the right of 9
+* There is 1 smaller element to the right of 6
+* There are no smaller elements to the right of 1
+
