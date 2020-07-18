@@ -8,6 +8,44 @@ For example, given `[10, 15, 3, 7]` and `k` of 17, return **true** since 10 + 7 
 
 *Bonus: Can you do this in one pass?*
 
+### brute solution
+
+complexity: O(n<sup>2</sup>)
+
+```python
+
+def sol(arr, k):
+    for i, a in enumerate(arr[:-1]):
+        for b in arr[i+1:]:
+            if a+b == k:
+                return True
+    return False
+
+print(timeit.timeit("assert sol((1,3,42,19,10,7), 13)", setup="from __main__ import sol"))
+```
+
+timeit: 1.56883096695
+
+### faster solution
+
+complexity: O(n)
+
+```python
+
+def sol(arr, k):
+    s = set()
+    for a in arr:
+        b = k-a
+        if b in s:
+            return True
+        s.add(a)
+    return False
+
+print(timeit.timeit("assert sol((1,3,42,19,10,7), 13)", setup="from __main__ import sol"))
+```
+
+timeit: 1.35929107666
+
 ## Url shortner
 
 Implement a URL shortener with the following methods:
@@ -924,6 +962,7 @@ Return 2 as it occurs twice: once as the left leaf, and once as the sum of 2 + 5
 ## 197
 
 This problem was asked by Amazon.
+
 Given an array and a number k that's smaller than the length of the array, rotate the array to the right k elements in-place.
 
 ## 201
