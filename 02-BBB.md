@@ -103,7 +103,7 @@ d  e f  g
 ## 74
 
 This problem was asked by Apple.
-Suppose you have a multiplication table that is N by N. That is, a 2D array where the value at the i-th row and j-th column is (i + 1) * (j + 1) (if 0-indexed) or i * j (if 1-indexed).
+Suppose you have a multiplication table that is N by N. That is, a 2D array where the value at the i-th row and j-th column is `(i + 1) * (j + 1) (if 0-indexed)` or `i * j` (if 1-indexed).
 Given integers N and X, write a function that returns the number of times X appears as a value in an N by N multiplication table.
 For example, given N = 6 and X = 12, you should return 4, since the multiplication table looks like this:
 | 1 | 2 | 3 | 4 | 5 | 6 |
@@ -118,7 +118,7 @@ And there are 4 12's in the table.
 
 Using a function rand5() that returns an integer from 1 to 5 (inclusive) with uniform probability, implement a function rand7() that returns an integer from 1 to 7 (inclusive).
 
-## 76 
+## 76
 
 You are given an N by M 2D matrix of lowercase letters. Determine the minimum number of columns that can be removed to ensure that each row is ordered from top to bottom lexicographically. That is, the letter at each column is lexicographically later as you go down each row. It does not matter whether each row itself is ordered lexicographically.
 For example, given the following table:
@@ -139,7 +139,7 @@ wvu
 tsr
 Your function should return 3, since we would need to remove all the columns to order it.
 
-## 78 
+## 78
 
 Given k sorted singly linked lists, write a function to merge all the lists into one sorted singly linked list.
 
@@ -176,7 +176,7 @@ def merge(list_of_linked_lists):
             current_output.next = copy(loll[i])
             current_output = current_output.next
         current_output.next = None
-        loll[i] = loll[i].next            
+        loll[i] = loll[i].next
     return output
 ```
 
@@ -1892,4 +1892,59 @@ For example, given the array `[3, 4, 9, 6, 1]`, return `[1, 1, 2, 1, 0]`, since:
 * There are 2 smaller elements to the right of 9
 * There is 1 smaller element to the right of 6
 * There are no smaller elements to the right of 1
+
+## 558
+
+This problem was asked by Google.
+
+The area of a circle is defined as `πr<sup>2</sup>`. Estimate `π` to 3 decimal places using a Monte Carlo method.
+
+Hint: The basic equation of a circle is `x<sup>2</sup> + y<sup>2</sup>= r<sup>2<sup>`.
+
+### Solution
+
+Let's define a circle of radius 1 and let's create random points between `(0,0)` and `(1,1)`. if the square of the coordinates of the point summed togheter are <=1 it means we are inside the circle otherwise they are are outside.
+
+Let's work on a single quadrante and multiply be 4.
+
+```python
+from random import random
+
+class Point:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+    def __add__(self, p2):
+        return Point(self.x+p2.x, self.y+p2.y)
+    def __iter__(self):
+        def gen():
+            yield self.x
+            yield self.y
+        return gen()
+    def __repr__(self):
+        return f"{self.__class__}({self.x}, {self.y})"
+
+def gen():
+   while True:
+       yield Point(random(), random())
+
+
+def sol(precision = 3):
+    inside = 0
+    prepi = 0
+    zeros = 10**(precision+2)
+    mult = 4 * zeros
+    for i,(x,y) in enumerate(gen()):
+        if (x**2+y**2)<=1:
+            inside+=1
+        if i>258_000 and i%zeros == 0:
+            pi = mult*inside//(i+1)
+            if pi == prepi:  ## wait for a stable value
+                break
+            prepi=pi
+    print(("{:0.%if}" % precision).format(pi/zeros))
+
+sol()
+
+```
 
