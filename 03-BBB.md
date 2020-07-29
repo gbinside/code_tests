@@ -399,7 +399,41 @@ For example, given the stones [1, 1, 3, 3, 2, 1], the optimal solution is to pay
 ## 296
 
 This problem was asked by Etsy.
+
 Given a sorted array, convert it into a height-balanced binary search tree.
+
+```python
+"""
+Let's have the array as a list
+Let's create the tree as a list
+Root is tree[0]
+First left node is tree[1]
+First right node is tree[2]
+the usul rule is : tree[<parent>] => left:tree[<parent>*2+1] , right:tree[<parent>*2+2]
+
+Let's create a generator to get the mapping between the 2 lists. 
+The generator is visiting the binary tree in order to generate a sorted array.
+So we just have to map the list back to the tree.
+"""
+
+def make_tree(arr):
+    def gen(_len, p=0):
+        l = 2*p+1
+        r = 2*p+2
+        if l<_len:
+            yield from gen(_len, l)
+        yield p
+        if r<_len:
+            yield from gen(_len, r)
+
+    l = len(arr)
+    tree = [None] * l
+    for i, g in enumerate(gen(l)):
+            tree[g] = arr[i]
+        
+    return tree
+
+```
 
 ## 304
 
