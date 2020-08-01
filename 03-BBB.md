@@ -283,8 +283,52 @@ query(start: int, end: int): Retrieve the number of subscribers that have signed
 You can assume that all values get cleared at the end of the day, and that you will not be asked for start and end values that wrap around midnight.
 
 ## 248
+
 This problem was asked by Nvidia.
+
 Find the maximum of two numbers without using any if-else statements, branching, or direct comparisons.
+
+```python
+
+"""
+let's stick to math functions
+"""
+
+def _max(a, b):
+    try:
+        sa = a/abs(a)
+    except:
+        sa = 1
+    try:
+        sb = b/abs(b)
+    except:
+        sb = 1
+    try:
+        m = abs(a)//abs(b)
+    except:
+        m = abs(a+1)//abs(b+1)
+    try:
+        m //= m
+    except: 
+        pass
+    d = {
+        (-1, 1, 0): b,
+        (-1, 1, 1): b,
+        ( 1,-1, 0): a,
+        ( 1,-1, 0): a,
+        (-1,-1, 0): a,
+        (-1,-1, 1): b,
+        ( 1, 1, 0): b,
+        ( 1, 1, 1): a,
+    }
+    return d[(sa,sb,m)]
+
+assert _max(6,10) == 10
+assert _max(6,0) == 6
+assert _max(-6,10) == 10
+assert _max(-6,-10) == -6
+
+```
 
 ## 249
 
@@ -1130,4 +1174,14 @@ This problem was asked by Twitter.
 Given a binary tree, find the lowest common ancestor (LCA) of two given nodes in the tree. Assume that each node in the tree also has a pointer to its parent.
 
 According to the definition of LCA on Wikipedia [https://en.wikipedia.org/wiki/Lowest_common_ancestor]: “The lowest common ancestor is defined between two nodes v and w as the lowest node in T that has both v and w as descendants (where we allow a node to be a descendant of itself).”
+
+## 564
+
+This problem was asked by Airbnb.
+
+Given a list of integers, write a function that returns the largest sum of non-adjacent numbers. Numbers can be `0` or negative.
+
+For example, `[2, 4, 6, 2, 5]` should return `13`, since we pick `2`, `6`, and `5`. `[5, 1, 1, 5]` should return `10`, since we pick `5` and `5`.
+
+Follow-up: Can you do this in O(N) time and constant space?
 
