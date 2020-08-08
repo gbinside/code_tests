@@ -72,6 +72,7 @@ Given a tree, return the size of the largest tree/subtree that is a BST.
 ## 115
 
 This problem was asked by Google.
+
 Given two non-empty binary trees s and t, check whether tree t has exactly the same structure and node values with a subtree of s. A subtree of s is a tree consists of a node in s and all of this node's descendants. The tree s could also be considered as a subtree of itself.
 
 ## 114
@@ -267,7 +268,8 @@ Recall that the minimum spanning tree is the subset of edges of a tree that conn
 ## 235
 
 This problem was asked by Facebook.
-Given an array of numbers of length N, find both the minimum and maximum using less than 2 * (N - 2) comparisons.
+
+Given an array of numbers of length `N`, find both the minimum and maximum using less than `2 * (N - 2)` comparisons.
 
 ## 240
 
