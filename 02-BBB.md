@@ -442,11 +442,14 @@ Return 4.
 ## 137
 
 This problem was asked by Amazon.
+ 
 Implement a bit array.
+
 A bit array is a space efficient array that holds a value of 1 or 0 at each index.
-init(size): initialize the array with size
-set(i, val): updates index at i with val where val is either 1 or 0.
-get(i): gets the value at index i.
+
+* `init(size)`: initialize the array with size
+* `set(i, val)`: updates index at i with val where val is either 1 or 0.
+* `get(i)`: gets the value at index i.
 
 ## 139
 
@@ -596,9 +599,13 @@ For example, given the sequence 2, 4, 3, 8, 7, 5, you should construct the follo
 ## 180
 
 This problem was asked by Google.
+
 Given a stack of N elements, interleave the first half of the stack with the second half reversed using only one other queue. This should be done in-place.
+
 Recall that you can only push or pop from a stack, and enqueue or dequeue from a queue.
+
 For example, if the stack is [1, 2, 3, 4, 5], it should become [1, 5, 2, 4, 3]. If the stack is [1, 2, 3, 4], it should become [1, 4, 2, 3].
+
 Hint: Try working backwards from the end state.
 
 ## 168
@@ -626,11 +633,15 @@ Follow-up: What if you couldn't use any extra space?
 ## 166
 
 This problem was asked by Uber.
+
 Implement a 2D iterator class. It will be initialized with an array of arrays, and should implement the following methods:
-next(): returns the next element in the array of arrays. If there are no more elements, raise an exception.
-has_next(): returns whether or not the iterator still has elements left.
+
+* `next()`: returns the next element in the array of arrays. If there are no more elements, raise an exception.
+* `has_next()`: returns whether or not the iterator still has elements left.
+
 For example, given the input [[1, 2], [3], [], [4, 5, 6]], calling next() repeatedly should output 1, 2, 3, 4, 5, 6.
-Do not use flatten or otherwise clone the arrays. Some of the arrays can be empty.
+
+Do not use `flatten` or otherwise clone the arrays. Some of the arrays can be empty.
 
 ## 164
 
@@ -942,8 +953,10 @@ You should return 9, because propagating the message from 0 -> 2 -> 3 -> 4 will 
 ## 272
 
 This problem was asked by Spotify.
-Write a function, throw_dice(N, faces, total), that determines how many ways it is possible to throw N dice with some number of faces each to get a specific total.
-For example, throw_dice(3, 6, 7) should equal 15.
+
+Write a function, `throw_dice(N, faces, total)`, that determines how many ways it is possible to throw N dice with some number of faces each to get a specific total.
+
+For example, `throw_dice(3, 6, 7)` should equal `15`.
 
 ## 275
 
