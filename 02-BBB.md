@@ -837,14 +837,44 @@ For example, given [6, 2, 4, 0, 5, 1, 1, 4, 2, 9], you should return 2, as the o
 
 ## 246
 
+
 This problem was asked by Dropbox.
+
 Given a list of words, determine whether the words can be chained to form a circle. A word X can be placed in front of another word Y in a circle if the last character of X is same as the first character of Y.
-For example, the words ['chair', 'height', 'racket', touch', 'tunic'] can form the following circle: chair --> racket --> touch --> height --> tunic --> chair.
+
+For example, the words `['chair', 'height', 'racket', 'touch', 'tunic']` can form 
+the following circle: `chair --> racket --> touch --> height --> tunic --> chair`.
+
+```python
+
+def sol(l):
+    stack = [([x], l[:i]+l[i+1:]) for i, x in enumerate(l)]
+    yielded = set()
+    
+    while stack:
+        chain, words = stack.pop()
+        if not words:
+            if chain[0][0] == chain[-1][-1]:
+                s = frozenset(chain)
+                if s not in yielded:
+                    yielded.add(s)
+                    yield chain
+        else:
+            c = chain[-1][-1]
+            for i, w in enumerate(words):
+                if w[0] == c:
+                    chain2 = chain + [w]
+                    words2 = words[:i]+words[i+1:]
+                    stack.append((chain2, words2))
+    
+print(list(sol(['chair', 'height', 'racket', 'touch', 'tunic'])))
+
+```
 
 ## 250
 
 This problem was asked by Google.
-A cryptarithmetic puzzle is a mathematical game where the digits of some numbers are represented by letters. Each letter represents a unique digit.
+A cryptarithmet ic puzzle is a mathematical game where the digits of some numbers are represented by letters. Each letter represents a unique digit.
 For example, a puzzle of the form:
   SEND
 + MORE
