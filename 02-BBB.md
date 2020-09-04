@@ -391,6 +391,33 @@ The most we can collect is `0 + 2 + 1 + 5 + 3 + 1` = `12` coins.
 
 ```python
 
+from collections import deque, namedtuple
+
+State = namedtuple('State', 'x y sum')
+
+matrix = [
+[0, 3, 1, 1],
+[2, 0, 0, 4],
+[1, 5, 3, 1],
+]
+
+def sol(m):
+    def all():
+        stack = deque((State(0,0,0),))
+
+        while stack:
+            p = stack.popleft()
+            if p.x==len(m[-1])-1 and p.y==len(m)-1:
+                yield p.sum+m[-1][-1]
+            else:
+                if p.x < len(m[p.y])-1:
+                    stack.append(State(p.x+1, p.y, p.sum+m[p.y][p.x]))
+                if p.y < len(m)-1:
+                    stack.append(State(p.x, p.y+1, p.sum+m[p.y][p.x]))
+    
+    return max(all())
+
+print(sol(matrix))
 
 ```
 
