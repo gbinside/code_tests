@@ -375,12 +375,25 @@ Implement the singleton pattern with a twist. First, instead of storing one inst
 ## 122
 
 This question was asked by Zillow.
-You are given a 2-d matrix where each cell represents number of coins in that cell. Assuming we start at matrix[0][0], and can only move right or down, find the maximum number of coins you can collect by the bottom right corner.
+
+You are given a 2-d matrix where each cell represents number of coins in that cell. Assuming we start at `matrix[0][0]`, and can only move right or down, find the maximum number of coins you can collect by the bottom right corner.
+
 For example, in this matrix
+
+```
 0 3 1 1
 2 0 0 4
 1 5 3 1
-The most we can collect is 0 + 2 + 1 + 5 + 3 + 1 = 12 coins.
+```
+
+The most we can collect is `0 + 2 + 1 + 5 + 3 + 1` = `12` coins.
+
+
+```python
+
+
+```
+
 
 ## 128
 
@@ -1167,9 +1180,30 @@ For example, given "jiujitsu", you should return 5, corresponding to the final f
 ## 322
 
 This problem was asked by Flipkart.
+
 Starting from 0 on a number line, you would like to make a series of jumps that lead to the integer N.
+
 On the ith jump, you may move exactly i places to the left or right.
+
 Find a path with the fewest number of jumps required to get from 0 to N.
+
+```python
+def sol(n):
+    ret = [1,]
+    _sum = 1
+    p = 2
+    while (_sum - n) < 0 or (_sum - n) %2 == 1:
+        ret.append(p)
+        _sum+=p
+        p+=1
+    m = (_sum - n)//2
+    if m:
+        ret[m-1] = -ret[m-1]
+    return ret
+        
+
+print(sol(89))
+```
 
 ## 323
 
