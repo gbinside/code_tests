@@ -156,9 +156,13 @@ For example, given words "hello", and "world" and a text content of "dog cat hel
 ## 178
 
 This problem was asked by Two Sigma.
+
 Alice wants to join her school's Probability Student Club. Membership dues are computed via one of two simple probabilistic games.
+
 The first game: roll a die repeatedly. Stop rolling once you get a five followed by a six. Your number of rolls is the amount you pay, in dollars.
+
 The second game: same, except that the stopping condition is a five followed by a five.
+
 Which of the two games should Alice elect to play? Does it even matter? Write a program to simulate the two games and calculate their expected value.
 
 ## 160 
@@ -226,19 +230,25 @@ And i1 = 1, j1 = 1, i2 = 3, j2 = 3, return 15 as there are 15 numbers in the mat
 ## 199
 
 This problem was asked by Facebook.
+
 Given a string of parentheses, find the balanced string that can be produced from it using the minimum number of insertions and deletions. If there are multiple solutions, return any of them. 
+
 For example, given "(()", you could return "(())". Given "))()(", you could return "()()()()".
 
 ## 200
 
 This problem was asked by Microsoft.
+
 Let X be a set of n intervals on the real line. We say that a set of points P "stabs" X if every interval in X contains at least one point in P. Compute the smallest set of points that stabs X.
+
 For example, given the intervals [(1, 4), (4, 5), (7, 9), (9, 12)], you should return [4, 9].
 
 ## 209
 
 This problem was asked by Stripe.
+
 Given an integer n, return the length of the longest consecutive run of 1s in its binary representation.
+
 For example, given 156, you should return 3.
 
 ## 217
@@ -1196,3 +1206,27 @@ Given a number represented by a list of digits, find the next greater permutatio
 For example, the list [1,2,3] should return [1,3,2]. The list [1,3,2] should return [2,1,3]. The list [3,2,1] should return [1,2,3].
 
 Can you perform the operation without allocating extra memory (disregarding the input memory)?
+
+## 590
+
+This problem was asked by Google.
+
+An XOR linked list is a more memory efficient doubly linked list. Instead of each node holding next and prev fields, it holds a field named both, which is an XOR of the next node and the previous node. Implement an XOR linked list; it has an add(element) which adds the element to the end, and a get(index) which returns the node at index.
+
+If using a language that has no pointers (such as Python), you can assume you have access to get_pointer and dereference_pointer functions that converts between nodes and memory addresses.
+
+## 599
+
+This problem was asked by Two Sigma.
+
+Ghost is a two-person word game where players alternate appending letters to a word. The first person who spells out a word, or creates a prefix for which there is no possible continuation, loses. Here is a sample game:
+
+-    Player 1: g
+-    Player 2: h
+-    Player 1: o
+-    Player 2: s
+-    Player 1: t [loses]
+
+Given a dictionary of words, determine the letters the first player should start with, such that with optimal play they cannot lose.
+
+For example, if the dictionary is `["cat", "calf", "dog", "bear"]`, the only winning start letter would be `b`.

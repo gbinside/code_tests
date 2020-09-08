@@ -199,7 +199,7 @@ For example, given the following tree:
     a
    / \
   b   c
- / \  /
+ / \  / 
 d   e f
 ```
 should become:
@@ -214,13 +214,17 @@ should become:
 ## 84
 
 Given a matrix of 1s and 0s, return the number of "islands" in the matrix. A 1 represents land and 0 represents water, so an island is a group of 1s that are neighboring whose perimeter is surrounded by water.
+
 For example, this matrix has 4 islands.
+
+```
 1 0 0 0 0
 0 0 1 1 0
 0 1 1 0 0
 0 0 0 0 0
 1 1 0 0 1
-1 1 0 0 1
+1 1     0 0 1
+```
 
 ## 85
 
@@ -349,10 +353,10 @@ def solve(root):
             continue
         if last.left is None and last.right is None:  # if we are a leaf
             yield [x.value for x in path if x is not None]
-        if last.left is None
-            stack.append(path+(path.left,))
-        if last.right is None
-            stack.append(path+(path.right,))
+        if last.left is not None
+            stack.append(path+(last.left,))
+        if last.right is not None
+            stack.append(path+(last.right,))
 ```
 
 ## 116
@@ -1075,25 +1079,39 @@ Given a binary tree and a particular node, find all cousins of that node.
 ## 287
 
 This problem was asked by Quora.
+
 You are given a list of (website, user) pairs that represent users visiting websites. Come up with a program that identifies the top k pairs of websites with the greatest similarity.
+
 For example, suppose k = 1, and the list of tuples is:
+
+```
 [('a', 1), ('a', 3), ('a', 5),
  ('b', 2), ('b', 6),
  ('c', 1), ('c', 2), ('c', 3), ('c', 4), ('c', 5)
  ('d', 4), ('d', 5), ('d', 6), ('d', 7),
  ('e', 1), ('e', 3), ('e': 5), ('e', 6)]
+```
+
 Then a reasonable similarity metric would most likely conclude that a and e are the most similar, so your program should return [('a', 'e')].
 
 ## 288
 
 This problem was asked by Salesforce.
+
 The number 6174 is known as Kaprekar's contant, after the mathematician who discovered an associated property: for all four-digit numbers with at least two distinct digits, repeatedly applying a simple procedure eventually results in this value. The procedure is as follows:
+
 For a given input x, create two new numbers that consist of the digits in x in ascending and descending order.
+
 Subtract the smaller number from the larger number.
+
 For example, this algorithm terminates in three steps when starting from 1234:
+
+```
 4321 - 1234 = 3087
 8730 - 0378 = 8352
 8532 - 2358 = 6174
+```
+
 Write a function that returns how many steps this will take for a given input N.
 
 ## 291
@@ -2077,3 +2095,12 @@ def cons(a, b):
 
 Implement `car` and `cdr`.
 
+## 593
+
+This problem was asked by Mailchimp.
+
+You are given an array representing the heights of neighboring buildings on a city street, from east to west. The city assessor would like you to write an algorithm that returns how many of these buildings have a view of the setting sun, in order to properly value the street.
+
+For example, given the array [3, 7, 8, 3, 6, 1], you should return 3, since the top floors of the buildings with heights 8, 6, and 1 all have an unobstructed view to the west.
+
+Can you do this using just one forward pass through the array?

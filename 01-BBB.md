@@ -774,17 +774,24 @@ Follow-up: What if our system has limited memory?
 ## 134 
 
 This problem was asked by Facebook.
+
 You have a large array with most of the elements as zero.
-Use a more space-efficient data structure, SparseArray, that implements the same interface:
-init(arr, size): initialize with the original large array and size.
-set(i, val): updates index at i with val.
-get(i): gets the value at index i.
+
+Use a more space-efficient data structure, `SparseArray`, that implements the same interface:
+
+- `init(arr, size)`: initialize with the original large array and size.
+- `set(i, val)`: updates index at i with val.
+- `get(i)`: gets the value at index i.
 
 ## 135
 
 This question was asked by Apple.
+
 Given a binary tree, find a minimum path sum from root to a leaf.
-For example, the minimum path in this tree is [10, 5, 1, -1], which has sum 15.
+
+For example, the minimum path in this tree is `[10, 5, 1, -1]`, which has sum `15`.
+
+```
   10
  /  \
 5    5
@@ -792,6 +799,7 @@ For example, the minimum path in this tree is [10, 5, 1, -1], which has sum 15.
    2    1
        /
      -1
+```
 
 ## 145
 
@@ -1050,8 +1058,10 @@ Boggle is a game played on a 4 x 4 grid of letters. The goal is to find as many 
 ## 231
 
 This problem was asked by IBM.
-Given a string with repeated characters, rearrange the string so that no two adjacent characters are the same. If this is not possible, return None.
-For example, given "aaabbc", you could return "ababac". Given "aaab", return None.
+
+Given a string with repeated characters, rearrange the string so that no two adjacent characters are the same. If this is not possible, return `None`.
+
+For example, given `"aaabbc"`, you could return `"ababac"`. Given `"aaab"`, return `None`.
 
 ## 232
 
@@ -1513,7 +1523,9 @@ print ( min(
 
 This problem was asked by Google.
 
-You are given an N by N matrix of random letters and a dictionary of words. Find the maximum number of words that can be packed on the board from the given dictionary.
+You are given an N by N matrix of random letters and a dictionary of words. 
+
+Find the maximum number of words that can be packed on the board from the given dictionary.
 
 A word is considered to be able to be packed on the board if:
 
@@ -2164,4 +2176,30 @@ Given an array of numbers and a number k, determine if there are three entries i
 This problem was asked by Pandora.
 
 Given an undirected graph, determine if it contains a cycle.
+
+## 581
+
+This problem was asked by Google.
+
+Given two rectangles on a 2D graph, return the area of their intersection. If the rectangles don't intersect, return 0.
+
+For example, given the following rectangles:
+
+```
+{
+    "top_left": (1, 4),
+    "dimensions": (3, 3) # width, height
+}
+```
+
+and
+
+```
+{
+    "top_left": (0, 5),
+    "dimensions": (4, 3) # width, height
+}
+```
+
+return 6.
 
