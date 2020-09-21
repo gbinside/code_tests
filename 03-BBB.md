@@ -30,6 +30,7 @@ Implement a file syncing algorithm for two computers over a low-bandwidth networ
 ## 64
 
 A knight's tour is a sequence of moves by a knight on a chessboard such that all squares are visited once.
+
 Given N, write a function to return the number of knight's tours on an N by N chessboard.
 
 ## 75
@@ -392,9 +393,17 @@ If the pattern is found, return the start index of its location. If not, return 
 
 ## 286
 
-The skyline of a city is composed of several buildings of various widths and heights, possibly overlapping one another when viewed from a distance. We can represent the buildings using an array of (left, right, height) tuples, which tell us where on an imaginary x-axis a building begins and ends, and how tall it is. The skyline itself can be described by a list of (x, height) tuples, giving the locations at which the height visible to a distant observer changes, and each new height.
+The skyline of a city is composed of several buildings of various widths and heights, possibly overlapping one another when viewed from a distance. 
+
+We can represent the buildings using an array of (left, right, height) tuples, which tell us where on an imaginary x-axis a building begins and ends, and how tall it is. 
+
+The skyline itself can be described by a list of (x, height) tuples, giving the locations at which the height visible to a distant observer changes, and each new height.
+
 Given an array of buildings as described above, create a function that returns the skyline.
+
 For example, suppose the input consists of the buildings [(0, 15, 3), (4, 11, 5), (19, 23, 4)]. In aggregate, these buildings would create a skyline that looks like the one below. 
+
+```
      ______  
     |      |        ___
  ___|      |___    |   | 
@@ -402,6 +411,9 @@ For example, suppose the input consists of the buildings [(0, 15, 3), (4, 11, 5)
 | A |      | A |   |   |
 |   |      |   |   |   |
 ------------------------
+
+```
+
 As a result, your function should return [(0, 3), (4, 5), (11, 3), (15, 0), (19, 4), (23, 0)].
 
 ## 289
@@ -727,12 +739,12 @@ Given this representation, determine the depth of the tree.
 
 This problem was asked by Dropbox.
 
-Create a data structure that performs all the following operations in O(1) time:
+Create a data structure that performs all the following operations in `O(1)` time:
 
-* plus: Add a key with value 1. If the key already exists, increment its value by one.
-* minus: Decrement the value of a key. If the key's value is currently 1, remove it.
-* get_max: Return a key with the highest value.
-* get_min: Return a key with the lowest value.
+* `plus`: Add a key with value `1`. If the key already exists, increment its value by one.
+* `minus`: Decrement the value of a key. If the key's value is currently `1`, remove it.
+* `get_max`: Return a key with the highest value.
+* `get_min`: Return a key with the lowest value.
 
 ## 365
 

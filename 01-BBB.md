@@ -858,9 +858,12 @@ Find the busiest period in the building, that is, the time with the most people 
 ## 170 medium
 
 This problem was asked by Facebook.
-Given a start word, an end word, and a dictionary of valid words, find the shortest transformation sequence from start to end such that only one letter is changed at each step of the sequence, and each transformed word exists in the dictionary. If there is no possible transformation, return null. Each word in the dictionary have the same length as start and end and is lowercase.
-For example, given start = "dog", end = "cat", and dictionary = {"dot", "dop", "dat", "cat"}, return ["dog", "dot", "dat", "cat"].
-Given start = "dog", end = "cat", and dictionary = {"dot", "tod", "dat", "dar"}, return null as there is no possible transformation from dog to cat
+
+Given a `start` word, an `end` word, and a dictionary of valid words, find the shortest transformation sequence from `start` to `end` such that only one letter is changed at each step of the sequence, and each transformed word exists in the dictionary. If there is no possible transformation, return null. Each word in the dictionary have the same length as `start` and `end` and is lowercase.
+
+For example, given `start = "dog"`, `end = "cat"`, and `dictionary = {"dot", "dop", "dat", "cat"}`, return `["dog", "dot", "dat", "cat"]`.
+
+Given `start = "dog"`, `end = "cat"`, and `dictionary = {"dot", "tod", "dat", "dar"}`, return `null` as there is no possible transformation from `dog` to `cat`
 
 ## 173
 
@@ -920,9 +923,13 @@ Given the linked list 1 -> 2 -> 3 -> 4 -> 5 and k = 3, it should become 3 -> 4 -
 ## 191
 
 This problem was asked by Stripe.
+
 Given a collection of intervals, find the minimum number of intervals you need to remove to make the rest of the intervals non-overlapping.
+
 Intervals can "touch", such as [0, 1] and [1, 2], but they won't be considered overlapping.
+
 For example, given the intervals (7, 9), (2, 4), (5, 8), return 1 as the last interval can be removed and the first two won't overlap.
+
 The intervals are not necessarily sorted in any order.
 
 ## 189 (dup 489)
@@ -1148,12 +1155,14 @@ For example, given [-6, 0, 2, 40], you should return 2. Given [1, 5, 7, 8], you 
 
 This problem was asked by Microsoft.
 You are given an string representing the initial conditions of some dominoes. Each element can take one of three values:
-L, meaning the domino has just been pushed to the left,
-R, meaning the domino has just been pushed to the right, or
-., meaning the domino is standing still.
+
+* L, meaning the domino has just been pushed to the left,
+* R, meaning the domino has just been pushed to the right, or
+* ., meaning the domino is standing still.
+
 Determine the orientation of each tile when the dominoes stop falling. Note that if a domino receives a force from the left and right side simultaneously, it will remain upright.
-For example, given the string .L.R....L, you should return LL.RRRLLL.
-Given the string ..R...L.L, you should return ..RR.LLLL.
+For example, given the string `.L.R....L`, you should return `LL.RRRLLL`.
+Given the string `..R...L.L`, you should return `..RR.LLLL`.
 
 ## 266
 
@@ -1505,7 +1514,7 @@ This problem was asked by Google.
 
 Given a set of points (x, y) on a 2D cartesian plane, find the two closest points. 
 
-For example, given the points [(1, 1), (-1, -1), (3, 4), (6, 1), (-1, -6), (-4, -3)], return [(-1, -1), (1, 1)].
+For example, given the points `[(1, 1), (-1, -1), (3, 4), (6, 1), (-1, -6), (-4, -3)`], return `[(-1, -1), (1, 1)]`.
 
 ```python
 def dist(a,b):
