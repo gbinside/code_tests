@@ -2114,3 +2114,27 @@ You are given an array representing the heights of neighboring buildings on a ci
 For example, given the array [3, 7, 8, 3, 6, 1], you should return 3, since the top floors of the buildings with heights 8, 6, and 1 all have an unobstructed view to the west.
 
 Can you do this using just one forward pass through the array?
+
+## 616
+
+This problem was asked by Google.
+
+A cryptarithmetic puzzle is a mathematical game where the digits of some numbers are represented by letters. Each letter represents a unique digit.
+
+For example, a puzzle of the form:
+
+```
+  SEND
++ MORE
+--------
+ MONEY
+```
+
+may have the solution:
+
+```
+{'S': 9, 'E': 5, 'N': 6, 'D': 7, 'M': 1, 'O', 0, 'R': 8, 'Y': 2}
+```
+
+Given a three-word puzzle like the one above, create an algorithm that finds a solution.
+
