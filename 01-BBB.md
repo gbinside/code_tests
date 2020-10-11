@@ -55,10 +55,87 @@ Implement a URL shortener with the following methods:
 
 Hint: What if we enter the same URL twice?
 
+### Discussion
+
+First let's compute how many url can we short this way.
+With figures like 'A..Za..z0..9', let's remove {i, I, l, L, o, O, 0, 1}, because is easy to miread them, we can have 56 figures
+
+```python
+cifer = 'abcdefghjklmnpqrstuvxywzABCDEFGHJKLMNPQRSTUVXYWZ23456789'
+
+def tocode(n): 
+    ret  = '' 
+    for i in range(6): 
+        ret = cifer[n%len(cifer)] + ret 
+        n //= len(cifer) 
+    return ret
+                                             
+
+tocode(0)                                    
+# 'aaaaaa'
+
+tocode(56**6-1)     
+# '999999'
+
+```
+
+So we can have 56<sup>6</sup> codes. 30_840_979_456 a little bit less than 31 billions.
+
+Multiplying this by a resonable average of url lenght (64 bytes), we need to store 1_973_822_685_184 => 2 Petabytes of urls. We can't do this in memory so let's store it on an S3 like storage, our file will be called like the sorten version.
+
+We must compute an hash of the url, distributed 0..30_840_979_455 and store the url in a file with name computed with the `tocode` function. 
+
+When we save the url, We check if the file is there. If not, we erite it. DONE
+  If we find already a file, we check the content. If it is equel, we are DONE
+    If the content is differente we compute the next hash, with an evolving function. next = (hash + 4_405_854_209) % 30_840_979_456  (4_405_854_208 is a 7th of 30_840_979_456 )
+
+Is very unprobable that we go back to the starting hash, but if this happen it means we run out of free space. We'll need 7 figures not 6. We are not taking this scenario in account.
+
+```python
+def my_hash(s):
+    b = s.encode('utf-8')
+    ret = 0
+    for x in range(len(b)//8):
+        ret <<= 4
+        ret += struct.unpack('<Q', b[:8])[0]
+        ret %= 30_840_979_456
+        b = b[8:]
+    ret <<= 4
+    ret += struct.unpack('<Q', b + b'\x00' * (8-len(b)))[0]
+    ret %= 30_840_979_456
+    return ret
+
+my_hash('https://www.google.com')
+# 380_781_788
+
+my_hash('https://www.google.com/?q=search')
+# 19_750_499_088
+
+```
+
+We can also use MD% or SHA256 from the core libraries of a lot of languages, just remebe to `% 30_840_979_456` the output
+
 ## 47
 
 Given a array of numbers representing the stock prices of a company in chronological order, write a function that calculates the maximum profit you could have made from buying and selling that stock once. You must buy before you can sell it.
+
 For example, given [9, 11, 8, 5, 7, 10], you should return 5, since you could buy the stock at 5 dollars and sell it at 10 dollars.
+
+### Solution
+Find the `min` and then the `max` after that min.
+
+```python
+
+def gain(stocks):
+    _ptmin = _min = None
+    for idx, stock in enumerate(stocks):
+        if _min is None or stock < _min:
+            _min = stock
+            _ptmin = idx
+    _max = max(stocks[_ptmin:])
+    return _max-_min
+
+```
 
 ## 63 Kids Game
 
@@ -71,6 +148,20 @@ For example, given the following matrix:
  ['M', 'A', 'S', 'S']]
 ```
 and the target word 'FOAM', you should return true, since it's the leftmost column. Similarly, given the target word 'MASS', you should return true, since it's the last row.
+
+
+### Solution
+```python
+def check(matrix, word):
+    # left to right
+    if word in [''.join(x) for x in matrix]:
+        return True
+    if word in [''.join(x[::-1]) for x in zip(*matrix[::-1])]:
+        return True
+    return False
+```
+
+`zip(*matrix[::-1])` is used to rotate the matrix
 
 ## 65 Spiral Print
 
@@ -108,6 +199,18 @@ You should print out the following:
 13
 12
 ```
+
+```python
+
+while matrix:
+    for x in matrix[0]:
+        print(x)
+    matrix = matrix[1:]
+    if matrix:
+        matrix = [x[::-1] for x in zip(*matrix[::-1])][::-1]
+```
+
+Print first row, rotate and go on, until run out of matrix
 
 ## 69 Product of numbers
 
