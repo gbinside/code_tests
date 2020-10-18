@@ -753,7 +753,9 @@ Given [-4, 5, 1, 0], return 6 as we choose the numbers 5 and 1.
 ## 203
 
 This problem was asked by Uber.
+
 Suppose an array sorted in ascending order is rotated at some pivot unknown to you beforehand. Find the minimum element in O(log N) time. You may assume the array does not contain duplicates.
+
 For example, given [5, 7, 10, 3, 4], return 3.
 
 ## 198 
@@ -1418,7 +1420,7 @@ You are given a histogram consisting of rectangles of different heights. These h
 x x x x
 ```
 
-Determine the area of the largest rectangle that can be formed only from the bars of the histogram. For the diagram above, for example, this would be six, representing the 2 x 3 area at the bottom right.
+Determine the area of the largest rectangle that can be formed only from the bars of the histogram. For the diagram above, for example, this would be six, representing the `2 x 3` area at the bottom right.
 
 ## 360 
 
