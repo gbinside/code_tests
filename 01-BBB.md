@@ -641,6 +641,7 @@ d
 == 81
 
 Given a mapping of digits to letters (as in a phone number), and a digit string, return all possible letters the number could represent. You can assume each valid number in the mapping is a single digit.
+
 For example if {“2”: [“a”, “b”, “c”], 3: [“d”, “e”, “f”], …} then “23” should return [“ad”, “ae”, “af”, “bd”, “be”, “bf”, “cd”, “ce”, “cf"].
 
 == 82
@@ -996,8 +997,11 @@ You can assume keys do not contain dots in them, i.e. no clobbering will occur.
 ## 175
 
 This problem was asked by Google.
-You are given a starting state start, a list of transition probabilities for a Markov chain, and a number of steps num_steps. Run the Markov chain starting from start for num_steps and compute the number of times we visited each state.
-For example, given the starting state a, number of steps 5000, and the following transition probabilities:
+
+You are given a starting state `start`, a list of transition probabilities for a Markov chain, and a number of steps `num_steps`. Run the Markov chain starting from `start` for `num_steps` and compute the number of times we visited each state.
+
+For example, given the starting state `a`, number of steps 5000, and the following transition probabilities:
+```
 [
   ('a', 'a', 0.9),
   ('a', 'b', 0.075),
@@ -1009,7 +1013,8 @@ For example, given the starting state a, number of steps 5000, and the following
   ('c', 'b', 0.25),
   ('c', 'c', 0.5)
 ]
-One instance of running this Markov chain might produce { 'a': 3012, 'b': 1656, 'c': 332 }.
+```
+One instance of running this Markov chain might produce `{ 'a': 3012, 'b': 1656, 'c': 332 }`.
 
 ## 176
 
@@ -1150,8 +1155,10 @@ Let's define a "sevenish" number to be one which is either a power of 7, or the 
 ## 224
 
 Given a sorted array, find the smallest positive integer that is not the sum of a subset of the array.
-For example, for the input [1, 2, 3, 10], you should return 7.
-Do this in O(N) time.
+
+For example, for the input `[1, 2, 3, 10]`, you should return `7`.
+
+Do this in `O(N)` time.
 
 ## 225 - duplicate 483
 
@@ -1279,7 +1286,9 @@ Given the string `..R...L.L`, you should return `..RR.LLLL`.
 ## 266
 
 This problem was asked by Pivotal.
+
 A step word is formed by taking a given word, adding a letter, and anagramming the result. For example, starting with the word "APPLE", you can add an "A" and anagram to get "APPEAL".
+
 Given a dictionary of words and an input word, create a function that returns all valid step words.
 
 ## 265 

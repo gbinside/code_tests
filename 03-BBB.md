@@ -1264,3 +1264,9 @@ For example, suppose the input consists of the buildings [(0, 15, 3), (4, 11, 5)
 
 ```
 As a result, your function should return [(0, 3), (4, 5), (11, 3), (15, 0), (19, 4), (23, 0)].
+
+## 643
+
+This problem was asked by YouTube.
+
+Write a program that computes the length of the longest common subsequence of three given strings. For example, given "epidemiologist", "refrigeration", and "supercalifragilisticexpialodocious", it should return `5`, since the longest common subsequence is "eieio".
