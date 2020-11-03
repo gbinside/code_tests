@@ -3,16 +3,76 @@
 ## 20 Linked Lists
 
 Given two singly linked lists that intersect at some point, find the intersecting node. The lists are non-cyclical.
+
 For example, given A = 3 -> 7 -> 8 -> 10 and B = 99 -> 1 -> 8 -> 10, return the node with value 8.
+
 In this example, assume nodes with the same value are the exact same node objects.
+
 Do this in O(M + N) time (where M and N are the lengths of the lists) and constant space.
+
+### Solution
+
+Ok, we can reason on node pointer and not node values, because of the phrase "In this example, assume nodes with the same value are the exact same node objects."
+
+So is a metter of pointers.
+
+* compute the length of the 2 lists => `n`
+* skip the first `n` nodes of the longest list
+* now, keep 2 pointers and update them with the `.next` until they are not the same (or a list ends).
+* we are on top of the common node (or `null`).
+
+```python
+def ll_len(linked_list):
+    ret = 0
+    ptr = linked_list
+    while ptr:
+        ret += 1
+        ptr = ptr.next
+    return ret
+
+def common_node(A, B):
+    la = len(A)
+    lb = len(B)
+
+    if la > lb:  # in this way B will always be the longest linked list
+        A, B = B, A
+
+    for _ in range(abs(lb-la)):
+        B = B.next
+
+    while A != B and A and B:
+        B = B.next
+        A = A.next
+
+    return A
+```
 
 ## 26 Linked Lists Removing
 
 Given a singly linked list and an integer k, remove the kth last element from the list. k is guaranteed to be smaller than the length of the list.
+
 The list is very long, so making more than one pass is prohibitively expensive.
 
 Do this in constant space and in one pass.
+
+### Solution
+
+Given `start` as the start of the linked list and `k` as from problem definition
+
+```python
+def sol(start, k):
+    ptr_k = ptr_curr = start 
+    while ptr_curr.next:
+        if k == 0:
+            ptr_k = ptr_k.next
+        else:
+            k -= 1
+        ptr_curr = ptr_curr.next
+    ptr_k.next = ptr_k.next.next
+
+```
+
+I start with 2 pointer and then I start to increment the second one when 'distant' by `k` steps from the first one.
 
 ## 51 Deck Shuffle
 
@@ -22,9 +82,54 @@ It should run in O(N) time.
 
 Hint: Make sure each one of the `52!` permutations of the deck is equally likely.
 
+### Solution
+
+Let's start creating a sorted deck, then choose the first card between 0 and 51, then the second one between 1 and 51 and so on, until the last one is betweek 51 and 51 (here we can skip)
+
+```python
+from random import randint
+
+deck = [f'{n}{s}' for n in list(range(2,11)) + list('JQKA') for s in '♥♦♣♠']
+
+for position in range(51):
+    swap_with = randint(position, 51)
+    if position != swap_with:
+        deck[position], deck[swap_with] = deck[swap_with], deck[position]
+```
+
 ## 53 Queue
 
-Implement a queue using two stacks. Recall that a queue is a FIFO (first-in, first-out) data structure with the following methods: enqueue, which inserts an element into the queue, and dequeue, which removes it.
+Implement a queue using two stacks. 
+
+Recall that a queue is a FIFO (first-in, first-out) data structure with the following methods: 
+
+* `enqueue`, which inserts an element into the queue, and 
+* `dequeue`, which removes it.
+
+### Solution
+
+The concept is the following:
+* Put the insert into the stack A
+* Pull elements from the stack B, if B is empty, copy all A into B, this will reverse the order of the element and preserve the FIFO rule.
+
+```python
+
+from queue import LifoQueue
+
+class Fifo:
+    def __init__(self):
+        self.A = LifoQueue()
+        self.B = LifoQueue()
+
+    def enqueue(self, e):
+        self.A.put(e)
+
+    def dequeue(self):
+        if self.B.empty():
+            while not self.A.empty():
+                self.B.put(self.A.get())
+        return self.B.get()
+```
 
 ## 56 Color a Graph (dup 492)
 
