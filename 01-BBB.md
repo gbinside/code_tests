@@ -113,11 +113,11 @@ my_hash('https://www.google.com/?q=search')
 
 ```
 
-We can also use MD% or SHA256 from the core libraries of a lot of languages, just remebe to `% 30_840_979_456` the output
+We can also use MD5 or SHA256 from the core libraries of a lot of languages, just remeber to `% 30_840_979_456` the output
 
 ## 47
 
-Given a array of numbers representing the stock prices of a company in chronological order, write a function that calculates the maximum profit you could have made from buying and selling that stock once. You must buy before you can sell it.
+Given an array of numbers representing the stock prices of a company in chronological order, write a function that calculates the maximum profit you could have made from buying and selling that stock once. You must buy before you can sell it.
 
 For example, given [9, 11, 8, 5, 7, 10], you should return 5, since you could buy the stock at 5 dollars and sell it at 10 dollars.
 
@@ -208,6 +208,7 @@ while matrix:
     matrix = matrix[1:]
     if matrix:
         matrix = [x[::-1] for x in zip(*matrix[::-1])][::-1]
+
 ```
 
 Print first row, rotate and go on, until run out of matrix
@@ -437,7 +438,9 @@ Given the list of flights [('A', 'B'), ('A', 'C'), ('B', 'C'), ('C', 'A')] and s
 ## 40
 
 This problem was asked by Google.
+
 Given an array of integers where every integer occurs three times except for one integer, which only occurs once, find and return the non-duplicated integer.
+
 For example, given [6, 1, 3, 3, 3, 6, 6], return 1. Given [13, 19, 13, 13], return 19.
 Do this in O(N) time and O(1) space.
 
@@ -623,10 +626,12 @@ If you liked this guide, feel free to forward it along! As always, shoot us an e
 
 == 77
 
-Good morning! Here's your coding interview problem for today.
 This problem was asked by Snapchat.
+
 Given a list of possibly overlapping intervals, return a new list of intervals where all overlapping intervals have been merged.
+
 The input list is not necessarily ordered in any way.
+
 For example, given [(1, 3), (5, 8), (4, 10), (20, 25)], you should return [(1, 3), (4, 10), (20, 25)].
 
 == 80
