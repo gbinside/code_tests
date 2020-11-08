@@ -1338,8 +1338,28 @@ Write a function that returns the bitwise AND of all integers between M and N, i
 ## 320
 
 This problem was asked by Amazon.
+
 Given a string, find the length of the smallest window that contains every distinct character. Characters may appear more than once in the window.
-For example, given "jiujitsu", you should return 5, corresponding to the final five letters.
+
+For example, given "jiujitsu", you should return `5`, corresponding to the final five letters.
+
+### Solution
+
+```python
+def solve(s):
+    s_set = set(s)
+    ps = 0
+    pe = len(s)
+    pre_pe = pe
+
+    while s_set == set(s[ps:pe]):
+        if s_set == set(s[ps+1:pe]):
+            ps+=1
+        else:
+            pre_pe = pe
+            pe-=1
+    return pre_pe - ps
+```
 
 ## 322
 
