@@ -1451,12 +1451,18 @@ Given an integer N, determine in how many ways this task is possible.
 ## 315
 
 This problem was asked by Google.
+
 In linear algebra, a Toeplitz matrix is one in which the elements on any given diagonal from top left to bottom right are identical.
+
 Here is an example:
+
+```
 1 2 3 4 8
 5 1 2 3 4
 4 5 1 2 3
 7 4 5 1 2
+```
+
 Write a program to determine whether a given input is a Toeplitz matrix.
 
 ## 321
@@ -2363,3 +2369,12 @@ For example, the following tree has 5 unival subtrees:
   / \
  1   1
  ```
+
+ ## 662
+
+ This problem was asked by Amazon.
+
+Given n numbers, find the greatest common denominator between them.
+
+For example, given the numbers `[42, 56, 14]`, return `14`.
+
