@@ -16,7 +16,7 @@ Ok, we can reason on node pointer and not node values, because of the phrase "In
 
 So is a metter of pointers.
 
-* compute the length of the 2 lists => `n`
+* compute the difference of length of the 2 lists => `n`
 * skip the first `n` nodes of the longest list
 * now, keep 2 pointers and update them with the `.next` until they are not the same (or a list ends).
 * we are on top of the common node (or `null`).
@@ -72,7 +72,7 @@ def sol(start, k):
 
 ```
 
-I start with 2 pointer and then I start to increment the second one when 'distant' by `k` steps from the first one.
+I start with 2 pointers and then I start to increment the second one when 'distant' by `k` steps from the first one.
 
 ## 51 Deck Shuffle
 
