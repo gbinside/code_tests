@@ -1336,3 +1336,28 @@ You come across a dictionary of sorted words in a language you've never seen bef
 For example, given `['xww', 'wxyz', 'wxyw', 'ywx', 'ywz']`, you should return `['x', 'z', 'w', 'y']`.
 
 
+## 673
+
+Given a list of points, a central point, and an integer `k`, find the nearest `k` points from the central point.
+
+For example, given the list of points `[(0, 0), (5, 4), (3, 1)]`, the central point `(1, 2)`, and `k = 2`, return `[(0, 0), (3, 1)]`.
+
+## 676
+
+This problem was asked by LinkedIn.
+
+Given a string, return whether it represents a number. Here are the different kinds of numbers:
+
+*    "10", a positive integer
+*    "-10", a negative integer
+*    "10.1", a positive real number
+*    "-10.1", a negative real number
+*    "1e5", a number in scientific notation
+
+And here are examples of non-numbers:
+
+* "a"
+* "x 1"
+* "a -2"
+* "-"
+
