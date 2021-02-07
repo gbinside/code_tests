@@ -412,10 +412,13 @@ For example, a sorted list has zero inversions. The array [2, 4, 1, 3, 5] has th
 ## 43
 
 This problem was asked by Amazon.
+
 Implement a stack that has the following methods:
-push(val), which pushes an element onto the stack
-pop(), which pops off and returns the topmost element of the stack. If there are no elements in the stack, then it should throw an error or return null.
-max(), which returns the maximum value in the stack currently. If there are no elements in the stack, then it should throw an error or return null.
+
+* `push(val)`, which pushes an element onto the stack
+* `pop()`, which pops off and returns the topmost element of the stack. If there are no elements in the stack, then it should throw an error or return `null`.
+* `max()`, which returns the maximum value in the stack currently. If there are no elements in the stack, then it should throw an error or return null.
+
 Each method should run in constant time.
 
 ## 42 hard?
@@ -982,8 +985,11 @@ Given `start = "dog"`, `end = "cat"`, and `dictionary = {"dot", "tod", "dat", "d
 ## 173
 
 This problem was asked by Stripe.
+
 Write a function to flatten a nested dictionary. Namespace the keys with a period.
+
 For example, given the following dictionary:
+```python
 {
     "key": 3,
     "foo": {
@@ -993,12 +999,32 @@ For example, given the following dictionary:
         }
     }
 }
+```
+
 it should become:
+
+```python
 {
     "key": 3,
     "foo.a": 5,
     "foo.bar.baz": 8
 }
+```
+
+### Solution (Python)
+
+```python
+def flat(d): 
+    ret = {} 
+    for k,v in d.items(): 
+        if type(v)==dict: 
+            for k2,v2 in flat(v).items():
+                ret[k+'.'+k2] = v2 
+        else: 
+            ret[k]=v
+    return ret 
+```
+
 You can assume keys do not contain dots in them, i.e. no clobbering will occur.
 
 ## 175

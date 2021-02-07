@@ -1114,6 +1114,7 @@ The sequence `[0, 1, ..., N]` has been jumbled, and the only clue you have for i
 ## 262
 
 This problem was asked by Mozilla.
+
 A bridge in a connected (undirected) graph is an edge that, if removed, causes the graph to become disconnected. Find all the bridges in a graph.
 
 ## 263 (dup 431)
@@ -1305,9 +1306,12 @@ Considering the edges of the matrix as boundaries, this divides the grid into th
 ## 301
 
 This problem was asked by Triplebyte.
+
 Implement a data structure which carries out the following operations without resizing the underlying array:
-add(value): Add a value to the set of values.
-check(value): Check whether a value is in the set.
+
+* `add(value)`: Add a value to the set of values.
+* `check(value)`: Check whether a value is in the set.
+
 The check method may return occasional false positives (in other words, incorrectly identifying an element as part of the set), but should always correctly identify a true element.
 
 ## 306
