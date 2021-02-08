@@ -717,7 +717,7 @@ def recursive_solution(grid, x, y, used, word):
     return False
 
 
-def solution(grid, word):
+def exists(grid, word):
     if word == '':
         return False
     first_letter = word[0]
@@ -729,7 +729,7 @@ def solution(grid, word):
                     return True
     return False
 
-def stack_solution(grid, word):
+def stack_exists(grid, word):
     if word == '':
         return False
     first_letter = word[0]
