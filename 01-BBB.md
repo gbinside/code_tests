@@ -680,15 +680,148 @@ Given a binary tree of integers, find the maximum path sum between two nodes. Th
 ## 98
 
 This problem was asked by Coursera.
+
 Given a 2D board of characters and a word, find if the word exists in the grid.
+
 The word can be constructed from letters of sequentially adjacent cell, where "adjacent" cells are those horizontally or vertically neighboring. The same letter cell may not be used more than once.
+
 For example, given the following board:
+```python
 [
   ['A','B','C','E'],
   ['S','F','C','S'],
   ['A','D','E','E']
 ]
+```
+
 exists(board, "ABCCED") returns true, exists(board, "SEE") returns true, exists(board, "ABCB") returns false.
+
+### Solution
+
+```python
+def recursive_solution(grid, x, y, used, word):
+    if word == '':
+        return True
+    first_letter = word[0]
+
+    for dx, dy in ((0,1),(1,0),(-1,0),(0,-1)):
+        nx = x + dx
+        ny = y + dy
+        if nx<0 or ny<0 or nx>len(grid[0])-1 or ny>len(grid)-1 or (nx,ny) in used:        
+            continue
+
+        if grid[ny][nx] == first_letter:            
+            ret = recursive_solution(grid, nx, ny, used | {(nx,ny)}, word[1:])
+            if ret:
+                return True
+    return False
+
+
+def solution(grid, word):
+    if word == '':
+        return False
+    first_letter = word[0]
+    for y, row in enumerate(grid):
+        for x, cell in enumerate(row):
+            if cell==first_letter: 
+                ret = recursive_solution(grid, x, y, {(x,y)}, word[1:])
+                if ret:
+                    return True
+    return False
+
+def stack_solution(grid, word):
+    if word == '':
+        return False
+    first_letter = word[0]
+    stack = []  # here a deque would be better
+    for y, row in enumerate(grid):
+        for x, cell in enumerate(row):
+            if cell==first_letter: 
+                stack.append((x, y, {(x,y)}, word[1:]))
+    while stack:
+        x, y, used, w = stack.pop()
+        if w == '':
+            return True
+        first_letter = w[0]
+
+        for dx, dy in ((0,1),(1,0),(-1,0),(0,-1)):
+            nx = x + dx
+            ny = y + dy
+            if nx<0 or ny<0 or nx>len(grid[0])-1 or ny>len(grid)-1 or (nx,ny) in used:        
+                continue
+
+            if grid[ny][nx] == first_letter:     
+                stack.append((nx, ny, used | {(nx,ny)}, w[1:]))
+
+    return False
+
+
+assert (
+    solution(
+        [
+        ['A','B','C','E'],
+        ['S','F','C','S'],
+        ['A','D','E','E'],
+        ],
+        'ABCB'
+    )
+)==False
+
+assert (
+    solution(
+        [
+        ['A','B','C','E'],        
+        ['S','F','C','S'],
+        ['A','D','E','E'],
+        ],
+        'ABCCED'
+    )
+)==True
+
+assert (
+    solution(
+        [
+        ['A','B','C','E'],
+        ['S','F','C','S'],
+        ['A','D','E','E'],
+        ],
+        'ABCESEEDASFC'
+    )
+)==True
+
+assert (
+    stack_solution(
+        [
+        ['A','B','C','E'],
+        ['S','F','C','S'],
+        ['A','D','E','E'],
+        ],
+        'ABCB'
+    )
+)==False
+
+assert (
+    stack_solution(
+        [
+        ['A','B','C','E'],        
+        ['S','F','C','S'],
+        ['A','D','E','E'],
+        ],
+        'ABCCED'
+    )
+)==True
+
+assert (
+    stack_solution(
+        [
+        ['A','B','C','E'],
+        ['S','F','C','S'],
+        ['A','D','E','E'],
+        ],
+        'ABCESEEDASFC'
+    )
+)==True
+```
 
 ## 100
 
