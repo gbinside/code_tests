@@ -864,12 +864,16 @@ For example, if A is abcde and B is cdeab, return true. If A is abc and B is acb
 ## 107
 
 This problem was asked by Microsoft.
-Print the nodes in a binary tree level-wise. For example, the following should print 1, 2, 3, 4, 5.
+
+Print the nodes in a binary tree level-wise. For example, the following should print `1, 2, 3, 4, 5`.
+
+```
   1
  / \
 2   3
    / \
   4   5
+```
 
 ## 104
 
