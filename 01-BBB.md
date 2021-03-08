@@ -63,18 +63,18 @@ With figures like 'A..Za..z0..9', let's remove {i, I, l, L, o, O, 0, 1}, because
 ```python
 cifer = 'abcdefghjklmnpqrstuvxywzABCDEFGHJKLMNPQRSTUVXYWZ23456789'
 
-def tocode(n): 
-    ret  = '' 
-    for i in range(6): 
-        ret = cifer[n%len(cifer)] + ret 
-        n //= len(cifer) 
+def tocode(n):
+    ret  = ''
+    for i in range(6):
+        ret = cifer[n%len(cifer)] + ret
+        n //= len(cifer)
     return ret
-                                             
 
-tocode(0)                                    
+
+tocode(0)
 # 'aaaaaa'
 
-tocode(56**6-1)     
+tocode(56**6-1)
 # '999999'
 
 ```
@@ -83,7 +83,7 @@ So we can have 56<sup>6</sup> codes. 30_840_979_456 a little bit less than 31 bi
 
 Multiplying this by a resonable average of url lenght (64 bytes), we need to store 1_973_822_685_184 => 2 Petabytes of urls. We can't do this in memory so let's store it on an S3 like storage, our file will be called like the sorten version.
 
-We must compute an hash of the url, distributed 0..30_840_979_455 and store the url in a file with name computed with the `tocode` function. 
+We must compute an hash of the url, distributed 0..30_840_979_455 and store the url in a file with name computed with the `tocode` function.
 
 When we save the url, We check if the file is there. If not, we erite it. DONE
   If we find already a file, we check the content. If it is equel, we are DONE
@@ -281,7 +281,7 @@ for x in input_list[::-1]:
     p *= x
 ```
 
-and we get 
+and we get
 
 ```python
 prod_array == [1, 1, 2, 6, 24]
@@ -346,6 +346,7 @@ def reverse(node, prev_node = None):
 ## 71
 
 This problem was asked by Two Sigma.
+
 Using a function rand7() that returns an integer from 1 to 7 (inclusive) with uniform probability, implement a function rand5() that returns an integer from 1 to 5 (inclusive).
 
 ```python
@@ -390,7 +391,7 @@ def fx(s):
     while start+l<=len(s):
         rev = s[start+l-1:start-1:-1]
         if start==0:
-            rev = s[l-1::-1] 
+            rev = s[l-1::-1]
         if s[start:start+l] == rev and l>len(ret):
             ret = s[start:start+l]
         l += 1
@@ -403,9 +404,13 @@ def fx(s):
 ##  44
 
 This problem was asked by Google.
+
 We can determine how "out of order" an array A is by counting the number of inversions it has. Two elements A[i] and A[j] form an inversion if A[i] > A[j] but i < j. That is, a smaller element appears after a larger element.
+
 Given an array, count the number of inversions it has. Do this faster than O(N^2) time.
+
 You may assume each element in the array is distinct.
+
 For example, a sorted list has zero inversions. The array [2, 4, 1, 3, 5] has three inversions: (2, 1), (4, 1), and (4, 3). The array [5, 4, 3, 2, 1] has ten inversions: every distinct pair forms an inversion.
 
 
@@ -652,10 +657,14 @@ Given a mapping of digits to letters (as in a phone number), and a digit string,
 
 For example if {“2”: [“a”, “b”, “c”], 3: [“d”, “e”, “f”], …} then “23” should return [“ad”, “ae”, “af”, “bd”, “be”, “bf”, “cd”, “ce”, “cf"].
 
-== 82
+## 82
+
+This problem was asked Microsoft.
 
 Using a read7() method that returns 7 characters from a file, implement readN(n) which reads n characters.
-For example, given a file with the content “Hello world”, three read7() returns “Hello w”, “orld” and then “”.
+
+For example, given a file with the content `“Hello world”`, three `read7()` returns
+`“Hello w”, “orld”` and then `“”`.
 
 ## 91
 
@@ -707,10 +716,10 @@ def recursive_solution(grid, x, y, used, word):
     for dx, dy in ((0,1),(1,0),(-1,0),(0,-1)):
         nx = x + dx
         ny = y + dy
-        if nx<0 or ny<0 or nx>len(grid[0])-1 or ny>len(grid)-1 or (nx,ny) in used:        
+        if nx<0 or ny<0 or nx>len(grid[0])-1 or ny>len(grid)-1 or (nx,ny) in used:
             continue
 
-        if grid[ny][nx] == first_letter:            
+        if grid[ny][nx] == first_letter:
             ret = recursive_solution(grid, nx, ny, used | {(nx,ny)}, word[1:])
             if ret:
                 return True
@@ -723,7 +732,7 @@ def exists(grid, word):
     first_letter = word[0]
     for y, row in enumerate(grid):
         for x, cell in enumerate(row):
-            if cell==first_letter: 
+            if cell==first_letter:
                 ret = recursive_solution(grid, x, y, {(x,y)}, word[1:])
                 if ret:
                     return True
@@ -736,7 +745,7 @@ def stack_exists(grid, word):
     stack = []  # here a deque would be better
     for y, row in enumerate(grid):
         for x, cell in enumerate(row):
-            if cell==first_letter: 
+            if cell==first_letter:
                 stack.append((x, y, {(x,y)}, word[1:]))
     while stack:
         x, y, used, w = stack.pop()
@@ -747,10 +756,10 @@ def stack_exists(grid, word):
         for dx, dy in ((0,1),(1,0),(-1,0),(0,-1)):
             nx = x + dx
             ny = y + dy
-            if nx<0 or ny<0 or nx>len(grid[0])-1 or ny>len(grid)-1 or (nx,ny) in used:        
+            if nx<0 or ny<0 or nx>len(grid[0])-1 or ny>len(grid)-1 or (nx,ny) in used:
                 continue
 
-            if grid[ny][nx] == first_letter:     
+            if grid[ny][nx] == first_letter:
                 stack.append((nx, ny, used | {(nx,ny)}, w[1:]))
 
     return False
@@ -770,7 +779,7 @@ assert (
 assert (
     solution(
         [
-        ['A','B','C','E'],        
+        ['A','B','C','E'],
         ['S','F','C','S'],
         ['A','D','E','E'],
         ],
@@ -803,7 +812,7 @@ assert (
 assert (
     stack_solution(
         [
-        ['A','B','C','E'],        
+        ['A','B','C','E'],
         ['S','F','C','S'],
         ['A','D','E','E'],
         ],
@@ -842,7 +851,7 @@ Input: [(0, 0), (1, 1), (1, 2)]
 Output: 2
 It takes 1 step to move from (0, 0) to (1, 1). It takes one more step to move from (1, 1) to (1, 2).
 
-## 101 
+## 101
 
 This problem was asked by Alibaba.
 Given an even number (greater than 2), return two prime numbers whose sum will be equal to the given number.
@@ -919,7 +928,7 @@ for i, x in enumerate(tree):
     if x is not None:
         dict_tree[i] = x
 
-dict_tree = { i:x for i, x in enumerate(tree) if x is not None }        
+dict_tree = { i:x for i, x in enumerate(tree) if x is not None }
 
 def search(dict_tree, n, skip):
     ptr = 0
@@ -933,15 +942,15 @@ def search(dict_tree, n, skip):
     return None
 
 def solve(tree, k):
-    dict_tree = { i:x for i, x in enumerate(tree) if x is not None }        
-    
+    dict_tree = { i:x for i, x in enumerate(tree) if x is not None }
+
     for p1, value in dict_tree.items():
         p2 = search(dict_tree, k-value, p1)
         if p2 is not None:
             return value, k-value, p1, p2
-    
+
     return None, None, None, None
-    
+
 ```
 
 COMPLEXITY: O( n lg(n) )
@@ -970,7 +979,7 @@ def solve(tree, k):
         p2 = search(tree, k-value, p1)
         if p2 is not None:
             return value, k-value, p1, p2
-    
+
     return None, None, None, None
 
 ```
@@ -997,7 +1006,7 @@ def solve(tree, k):
             return key1, key2, dict_tree[key1][0], dict_tree[key2][0]
 ```
 
-COMPLEXITY: O( n ) if no collisions 
+COMPLEXITY: O( n ) if no collisions
 WORSE O ( n^2 )
 
 ## 127
@@ -1023,7 +1032,7 @@ total(): returns the total number of hits recorded
 range(lower, upper): returns the number of hits that occurred between timestamps lower and upper (inclusive)
 Follow-up: What if our system has limited memory?
 
-## 134 
+## 134
 
 This problem was asked by Facebook.
 
@@ -1083,18 +1092,18 @@ For example, `carrace` should return true, since it can be rearranged to form `r
 Given a string, return the first recurring character in it, or null if there is no recurring character.
 For example, given the string "acbbac", return "b". Given the string "abcdef", return null.
 
-## 161 
+## 161
 
 This problem was asked by Facebook.
 
 Given a 32-bit integer, return the number with its bits reversed.
 
-For example, given the binary number 
+For example, given the binary number
 ```
 1111 0000 1111 0000 1111 0000 1111 0000
 ```
 
-return 
+return
 
 ```
 0000 1111 0000 1111 0000 1111 0000 1111
@@ -1151,15 +1160,15 @@ it should become:
 ### Solution (Python)
 
 ```python
-def flat(d): 
-    ret = {} 
-    for k,v in d.items(): 
-        if type(v)==dict: 
+def flat(d):
+    ret = {}
+    for k,v in d.items():
+        if type(v)==dict:
             for k2,v2 in flat(v).items():
-                ret[k+'.'+k2] = v2 
-        else: 
+                ret[k+'.'+k2] = v2
+        else:
             ret[k]=v
-    return ret 
+    return ret
 ```
 
 You can assume keys do not contain dots in them, i.e. no clobbering will occur.
@@ -1189,8 +1198,11 @@ One instance of running this Markov chain might produce `{ 'a': 3012, 'b': 1656,
 ## 176
 
 This problem was asked by Bloomberg.
+
 Determine whether there exists a one-to-one character mapping from one string s1 to another s2.
+
 For example, given s1 = abc and s2 = bcd, return true since we can map a to b, b to c, and c to d.
+
 Given s1 = foo and s2 = bar, return false since the o cannot map to two characters.
 
 
@@ -1214,7 +1226,7 @@ For example, given the intervals (7, 9), (2, 4), (5, 8), return 1 as the last in
 The intervals are not necessarily sorted in any order.
 
 ## 189 (dup 489)
- 
+
 This problem was asked by Google.
 
 Given an array of elements, return the length of the longest subarray where all its elements are distinct.
@@ -1342,9 +1354,10 @@ For example, if N = 5 and k = 2, the order of executions would be [2, 4, 1, 5, 3
 Bonus: Find an O(log N) solution if k = 2.
 
 
-## 227 
+## 227
 
 This problem was asked by Facebook.
+
 Boggle is a game played on a 4 x 4 grid of letters. The goal is to find as many words as possible that can be formed by a sequence of adjacent letters in the grid, using each cell at most once. Given a game board and a dictionary of valid words, implement a Boggle solver.
 
 ## 231
@@ -1388,7 +1401,7 @@ Given a binary tree, determine whether or not it is height-balanced. A height-ba
 ## 244
 
 This problem was asked by Square.
-The Sieve of Eratosthenes is an algorithm used to generate all prime numbers smaller than N. The method is to take increasingly larger prime numbers, and mark their multiples as composite. 
+The Sieve of Eratosthenes is an algorithm used to generate all prime numbers smaller than N. The method is to take increasingly larger prime numbers, and mark their multiples as composite.
 For example, to find all primes less than 100, we would first mark [4, 6, 8, ...] (multiples of two), then [6, 9, 12, ...] (multiples of three), and so on. Once we have done this for all primes less than N, the unmarked numbers that remain will be prime.
 Implement this algorithm.
 Bonus: Create a generator that produces primes indefinitely (that is, without taking N as an input).
@@ -1439,10 +1452,10 @@ Given a graph, find its transitive closure.
 ## 273
 
 This problem was asked by Apple.
-A fixed point in an array is an element whose value is equal to its index. Given a sorted array of distinct elements, return a fixed point, if one exists. Otherwise, return False. 
+A fixed point in an array is an element whose value is equal to its index. Given a sorted array of distinct elements, return a fixed point, if one exists. Otherwise, return False.
 For example, given [-6, 0, 2, 40], you should return 2. Given [1, 5, 7, 8], you should return False.
 
-## 269 
+## 269
 
 This problem was asked by Microsoft.
 You are given an string representing the initial conditions of some dominoes. Each element can take one of three values:
@@ -1463,7 +1476,7 @@ A step word is formed by taking a given word, adding a letter, and anagramming t
 
 Given a dictionary of words and an input word, create a function that returns all valid step words.
 
-## 265 
+## 265
 
 This problem was asked by Atlassian.
 MegaCorp wants to give bonuses to its employees based on how many lines of codes they have written. They would like to give the smallest positive amount to each worker consistent with the constraint that if a developer has written more lines of code than their neighbor, they should receive more money.
@@ -1487,7 +1500,7 @@ Given a dictionary of character frequencies, build a Huffman tree, and use it to
 
 ## 258
 
- Daily Coding Problem 
+ Daily Coding Problem
 Good morning! Here's your coding interview problem for today.
 This problem was asked by Morgan Stanley.
 In Ancient Greece, it was common to write text with the first line going left to right, the second line going right to left, and continuing to go back and forth. This style was called "boustrophedon".
@@ -1526,7 +1539,7 @@ Given an integer N, construct all possible binary search trees with N nodes.
 This problem was asked by Netflix.
 Given an array of integers, determine whether it contains a Pythagorean triplet. Recall that a Pythogorean triplet (a, b, c) is defined by the equation a^2+ b^2= c^2.
 
-## 279                                                          
+## 279
 
 This problem was asked by Twitter.
 A classroom consists of N students, whose friendships can be represented in an adjacency list. For example, the following descibes a situation where 0 is friends with 1 and 2, 3 is friends with 6, and so on.
@@ -1536,7 +1549,7 @@ A classroom consists of N students, whose friendships can be represented in an a
  3: [6],
  4: [],
  5: [1],
- 6: [3]} 
+ 6: [3]}
 Each student can be placed in a friend group, which can be defined as the transitive closure of that student's friendship relations. In other words, this is the smallest set such that no student in the group has any friends outside this group. For the example above, the friend groups would be {0, 1, 2, 5}, {3, 6}, {4}.
 Given a friendship list such as the one above, determine the number of friend groups in the class.
 
@@ -1641,7 +1654,7 @@ You may decrement N to N - 1.
 If a * b = N, you may decrement N to the larger of a and b.
 For example, given 100, you can reach 1 in five steps with the following route: 100 -> 10 -> 9 -> 3 -> 2 -> 1.
 
-## 324 
+## 324
 
 This problem was asked by Amazon.
 Consider the following scenario: there are N mice and N holes placed at integer points along a line. Given this, find a method that maps mice to holes such that the largest number of steps any mouse takes is minimized.
@@ -1690,10 +1703,10 @@ vector<pair<int,int>> solve(int m, int n) {
 int main()
 {
     cout << "solve(705, 573)" << endl;
-   
+
     auto res = solve(705, 573);
     cout << res.size() << " solutions" << endl;
-    
+
     for (auto x = res.begin(); x != res.end();) {
         cout << x->first << "," << x->second;
         x++;
@@ -1729,7 +1742,7 @@ pair<int, string> compute(int a, int b, int c, int d, int seq) {
         (seq>>2) & 7,
         (seq) & 3,
     };
-    
+
     for (auto o: op) {
         switch(o) {
             case 0: a=a+b; b=c; c=d;
@@ -1771,7 +1784,7 @@ pair<int, string> compute(int a, int b, int c, int d, int seq) {
             default:
                 break;
         }
-        
+
     }
     ss << seq << " end";
     string sss = ss.str();
@@ -1813,7 +1826,7 @@ int main()
 
 This problem was asked by Google.
 
-Given a set of points (x, y) on a 2D cartesian plane, find the two closest points. 
+Given a set of points (x, y) on a 2D cartesian plane, find the two closest points.
 
 For example, given the points `[(1, 1), (-1, -1), (3, 4), (6, 1), (-1, -6), (-4, -3)`], return `[(-1, -1), (1, 1)]`.
 
@@ -1833,7 +1846,7 @@ print ( min(
 
 This problem was asked by Google.
 
-You are given an N by N matrix of random letters and a dictionary of words. 
+You are given an N by N matrix of random letters and a dictionary of words.
 
 Find the maximum number of words that can be packed on the board from the given dictionary.
 
@@ -1858,7 +1871,7 @@ and matrix:
  ['a', 'r', 'a']]
 ```
 
-Your function should return 3, since we can make the words 'eat', 'in', and 'rat' without them touching each other. 
+Your function should return 3, since we can make the words 'eat', 'in', and 'rat' without them touching each other.
 
 We could have alternatively made 'eat' and 'rain', but that would be incorrect since that's only 2 words.
 
@@ -1882,8 +1895,8 @@ A ternary search tree is a trie-like data structure where each node may have up 
    b   o   w
  / |   |   |
 a  e   d   a
-|    / |   | \ 
-x   b  e   r  e  
+|    / |   | \
+x   b  e   r  e
 ```
 
 The tree is structured according to the following rules:
@@ -1932,7 +1945,7 @@ A strobogrammatic number is a positive number that appears the same after being 
 Create a program that finds all strobogrammatic numbers with N digits.
 
 
-## 370 
+## 370
 
 This problem was asked by Postmates.
 
@@ -2052,7 +2065,7 @@ Given a list of integers L, find the maximum length of a sequence of consecutive
 
 For example, given L = [5, 2, 99, 3, 4, 1, 100], return 5 as we can build a sequence [1, 2, 3, 4, 5] which has length 5.
 
-## 374 
+## 374
 
 This problem was asked by Amazon.
 
@@ -2077,7 +2090,7 @@ Given a binary tree and an integer k, return whether there exists a root-to-leaf
 
 For example, given k = 18 and the following binary tree:
 
-``` 
+```
     8
    / \
   4   13
@@ -2146,7 +2159,7 @@ This problem was asked by Google.
 You are in an infinite 2D grid where you can move in any of the 8 directions:
 
 ```
- (x,y) to    
+ (x,y) to
     (x+1, y),
     (x - 1, y),
     (x, y+1),
@@ -2374,7 +2387,7 @@ For example, given the input `['R', 'G', 'B', 'G', 'B']`, it is possible to end 
 # evoltion rules
 son={
     frozenset({'R','G'}): 'B',
-    frozenset({'R','B'}): 'G', 
+    frozenset({'R','B'}): 'G',
     frozenset({'B','G'}): 'R'
 }
 
@@ -2408,7 +2421,7 @@ def solution(l):
 ['B', 'B']
 >>> list(solution(_in))
 [['R', 'R'], ['B', 'B'], ['G', 'G'], ['R', 'R', 'R', 'R'], ['B', 'B', 'B', 'B'], ['G', 'G', 'G', 'G']]
->>> 
+>>>
 
 # example from the problem
 >>> list(solution(list('RGBGB')))
@@ -2481,7 +2494,7 @@ This problem was asked by Microsoft.
 
 Given an array of numbers and a number k, determine if there are three entries in the array which add up to the specified number k. For example, given `[20, 303, 3, 4, 25]` and `k = 49`, return `true` as 20 + 4 + 25 = 49.
 
-## 539 
+## 539
 
 This problem was asked by Pandora.
 
