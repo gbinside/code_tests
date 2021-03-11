@@ -1349,8 +1349,11 @@ Do this in `O(N)` time.
 This problem was asked by Bloomberg.
 
 There are N prisoners standing in a circle, waiting to be executed. The executions are carried out starting with the kth person, and removing every successive kth person going clockwise until there is no one left.
+
 Given N and k, write an algorithm to determine where a prisoner should stand in order to be the last survivor.
+
 For example, if N = 5 and k = 2, the order of executions would be [2, 4, 1, 5, 3], so you should return 3.
+
 Bonus: Find an O(log N) solution if k = 2.
 
 
@@ -1887,7 +1890,7 @@ For example, suppose we are given the string daily and k = 1. The best we can cr
 
 This problem was asked by Zillow.
 
-A ternary search tree is a trie-like data structure where each node may have up to three children. Here is an example which represents the words code, cob, be, ax, war, and we.
+A ternary search tree is a trie-like data structure where each node may have up to three children. Here is an example which represents the words `code`, `cob`, `be`, `ax`, `war`, and `we`.
 
 ```
        c
@@ -1905,7 +1908,7 @@ The tree is structured according to the following rules:
 * right child nodes link to words lexicographically later than the parent prefix
 * middle child nodes continue the current word
 
-For instance, since code is the first word inserted in the tree, and cob lexicographically precedes cod, cob is represented as a left child extending from cod.
+For instance, since `code` is the first word inserted in the tree, and `cob` lexicographically precedes `cod`, `cob` is represented as a left child extending from `cod`.
 
 Implement insertion and search functions for a ternary search tree.
 
